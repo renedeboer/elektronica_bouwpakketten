@@ -26,7 +26,7 @@ Het bouwpakket is ontworpen voor de **Futaba 5-LT-01**, een vintage Japans VFD m
 
 ### Hoe het werkt
 
-Het VFD display heeft 5 posities (4 cijfers + dubbele punt). Elk positie wordt aangestuurd via een **74HC238** decoder en twee **ULN2801A** darlington arrays. De Arduino Nano multiplext de posities snel achter elkaar — zo snel dat het oog het niet ziet.
+Het VFD display heeft 5 posities (4 cijfers + dubbele punt). Elk positie wordt aangestuurd via een **74HCT138** decoder en twee **ULN2801A** darlington arrays. De Arduino Nano multiplext de posities snel achter elkaar — zo snel dat het oog het niet ziet.
 
 De **RTC module** (gebaseerd op de DS1307) houdt de tijd bij, ook als de stroom uitvalt (met een CR2032 backup batterij op de module). De RTC module is een eigen ontwerp en ook te bestellen via de [webshop](https://rene-de-boer.nl) — zie ook de [GitHub pagina van de RTC module](https://github.com/renedeboer/ReneDeBoer_RTC). De **BMP280** meet temperatuur en luchtdruk via I2C.
 
@@ -42,7 +42,7 @@ De 230V wisselspanning wordt omgezet naar 5V door een **IRM-03-5** AC/DC module,
 |------------|--------------|--------|
 | A1 | Arduino Nano v3 | 1 |
 | U1, U3 | ULN2801A darlington array (DIP-18) | 2 |
-| U2 | 74HC238 3-naar-8 decoder (DIP-16) | 1 |
+| U2 | 74HCT138 3-naar-8 decoder (DIP-16) | 1 |
 | PS1 | MEE1S0515SC DC/DC converter | 1 |
 | PS2 | IRM-03-5 AC/DC converter | 1 |
 | K1 | Fujitsu FTR-LYCA005x relais | 1 |
