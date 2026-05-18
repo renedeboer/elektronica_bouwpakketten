@@ -11,7 +11,9 @@ De NE555 genereert pulsen voor de CD4017 decade counter. De 4017 verdeelt de LED
 
 ## Schema
 
-<!-- foto of export van het schema -->
+![555 Politielicht schema](schema/555police.svg)
+
+[Interactieve stuklijst (iBOM)](https://htmlpreview.github.io/?https://github.com/renedeboer/elektronica_bouwpakketten/blob/main/555-en-4017/politielicht/bom/ibom.html)
 
 ## Stuklijst
 

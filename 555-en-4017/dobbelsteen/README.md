@@ -13,7 +13,9 @@ De schuifschakelaar is de aan/uit schakelaar.
 
 ## Schema
 
-<!-- foto of export van het schema -->
+![Elektronische Dobbelsteen schema](schema/dice.svg)
+
+[Interactieve stuklijst (iBOM)](https://htmlpreview.github.io/?https://github.com/renedeboer/elektronica_bouwpakketten/blob/main/555-en-4017/dobbelsteen/bom/ibom.html)
 
 ## Stuklijst
 

@@ -26,7 +26,9 @@ De PCB stelt een kat voor die op de maan zit met de aarde op de achtergrond. De 
 
 Zie de [seriepagina](../README.md) voor de algemene volgorde van montage en de [soldeertips](../../docs/solderen.md).
 
-## Schema en PCB bestanden
+## Schema
+
+![angrycatsfromspace4 schema](schema/angrycatsfromspace4.svg)
 
 KiCad projectbestanden: `~/Documents/KiCad/projects/angrycatsfromspace4/`
 

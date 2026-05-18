@@ -34,7 +34,9 @@ De 230V wisselspanning wordt omgezet naar 5V door een **IRM-03-5** AC/DC module,
 
 ## Schema
 
-<!-- foto of export van het schema -->
+![VFD Klok schema](schema/vfd.svg)
+
+[Interactieve stuklijst (iBOM)](https://htmlpreview.github.io/?https://github.com/renedeboer/elektronica_bouwpakketten/blob/main/vfd-klok/bom/ibom.html)
 
 ## Stuklijst
 

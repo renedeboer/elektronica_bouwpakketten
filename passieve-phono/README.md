@@ -19,7 +19,9 @@ Dit bouwpakket is een **passieve** versie: het voert alleen de RIAA equalisatie 
 
 ## Schema
 
-<!-- foto of export van het schema -->
+![Passieve Phono schema](schema/passivephono.svg)
+
+[Interactieve stuklijst (iBOM)](https://htmlpreview.github.io/?https://github.com/renedeboer/elektronica_bouwpakketten/blob/main/passieve-phono/bom/ibom.html)
 
 ## Stuklijst
 

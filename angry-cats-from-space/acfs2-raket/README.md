@@ -30,7 +30,9 @@ Zie de [seriepagina](../README.md) voor de algemene volgorde van montage en de [
 - Met 20 SMD LED's is dit de meest bewerkelijke kit uit de serie. Neem de tijd en controleer na iedere paar LED's de richting.
 - De SMD LED's zitten dicht op elkaar; controleer na het solderen op tinbruggen.
 
-## Schema en PCB bestanden
+## Schema
+
+![angrycatsfromspace2 schema](schema/angrycatsfromspace2.svg)
 
 KiCad projectbestanden: `~/Documents/KiCad/projects/angrycatsfromspace2/`
 

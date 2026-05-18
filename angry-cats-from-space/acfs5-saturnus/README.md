@@ -26,7 +26,9 @@ De PCB toont een kat naast de planeet Saturnus met zijn kenmerkende ringen. De L
 
 Zie de [seriepagina](../README.md) voor de algemene volgorde van montage en de [soldeertips](../../docs/solderen.md).
 
-## Schema en PCB bestanden
+## Schema
+
+![angrycatsfromspace5 schema](schema/angrycatsfromspace5.svg)
 
 KiCad projectbestanden: `~/Documents/KiCad/projects/angrycatsfromspace5/`
 

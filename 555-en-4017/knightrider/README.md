@@ -13,7 +13,9 @@ De terugloop wordt gerealiseerd door de uitgang Q5 terug te koppelen naar de res
 
 ## Schema
 
-<!-- foto of export van het schema -->
+![555 Knight Rider schema](schema/555knightrider.svg)
+
+[Interactieve stuklijst (iBOM)](https://htmlpreview.github.io/?https://github.com/renedeboer/elektronica_bouwpakketten/blob/main/555-en-4017/knightrider/bom/ibom.html)
 
 ## Stuklijst
 

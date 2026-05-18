@@ -31,7 +31,9 @@ Zie de [seriepagina](../README.md) voor de algemene volgorde van montage en de [
 - De bidirectionele LED's D9–D14 (dual-kleur) bepalen het kleureffect. Welke kleur brandt hangt af van de richting van de stroom; dit wisselt de software automatisch af.
 - Monteer de bidirectionele LED's op gelijke hoogte voor een mooi resultaat.
 
-## Schema en PCB bestanden
+## Schema
+
+![angrycatsfromspace1 schema](schema/angrycatsfromspace1.svg)
 
 De KiCad projectbestanden staan in de [KiCad projectenmap](../../) op het lokale systeem (`~/Documents/KiCad/projects/angrycatsfromspace1/`).
 

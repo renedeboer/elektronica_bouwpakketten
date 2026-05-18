@@ -31,7 +31,9 @@ Zie de [seriepagina](../README.md) voor de algemene volgorde van montage en de [
 - D9 is een 5mm bidirectionele LED en vormt het accent (bijv. hoofd of borststuk). Monteer deze als laatste zodat je de hoogte goed kunt bepalen.
 - D10–D14 zijn 3mm bidirectionele LED's — soldeer ze op gelijke hoogte voor een uniform uiterlijk.
 
-## Schema en PCB bestanden
+## Schema
+
+![angrycatsfromspace3 schema](schema/angrycatsfromspace3.svg)
 
 KiCad projectbestanden: `~/Documents/KiCad/projects/angrycatsfromspace3/`
 

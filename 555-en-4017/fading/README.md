@@ -13,7 +13,9 @@ De NE555 genereert een laagfrequent blokgolfsignaal. Een transistor (BC547) en e
 
 ## Schema
 
-<!-- foto of export van het schema -->
+![555 Fading schema](schema/555.svg)
+
+[Interactieve stuklijst (iBOM)](https://htmlpreview.github.io/?https://github.com/renedeboer/elektronica_bouwpakketten/blob/main/555-en-4017/fading/bom/ibom.html)
 
 ## Stuklijst
 

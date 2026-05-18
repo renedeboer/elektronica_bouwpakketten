@@ -2,6 +2,10 @@
 
 Een verzameling zelfbouw elektronica bouwpakketten, van eenvoudige 555-timer schakelingen tot een VFD klok met Arduino. Alle bouwpakketten zijn ontworpen in KiCad.
 
+## Bestellen
+
+De printplaten en complete bouwpakketten zijn te bestellen via de webshop op **[rene-de-boer.nl](https://rene-de-boer.nl)**.
+
 ## Overzicht
 
 ### Angry Cats From Space — ATtiny85 LED bouwpakketten
