@@ -13,7 +13,7 @@ De **P82B715P** van NXP is een I2C bus buffer die de signaalniveaus omzet zodat 
 Dit bouwpakket bestaat uit **twee PCBs**:
 
 1. **Arduino Uno Shield** (klein) — steekt op de Arduino Uno, bevat de P82B715P en de aansluiting voor de verlengkabel
-2. **Remote I/O board** (groot) — aan het einde van de kabel; heeft 18 I/O pinnen (P0–P17) met gebufferde uitgangen via een ULN2804, ongebufferde I/O, en aansluitklemmen voor externe apparatuur
+2. **Remote I/O board** (groot) — aan het einde van de kabel; bevat een **PCF8575** I2C I/O expander met 16 ongebufferde I/O pinnen (P0–P17), en een **ULN2804** die de gebufferde uitgangen (O0–O17) aanstuurt. Wanneer de P-pinnen als ingang worden gebruikt, volgen de O-uitgangen mee.
 
 ![Compleet systeem met Arduino Uno en kabel](fotos/i2c_systeem_compleet.jpg)
 *Het complete systeem: Arduino Uno met shield (boven links), remote board (onder) en verbindingskabel*
@@ -49,10 +49,10 @@ Het bouwpakket leent zich voor alle situaties waarbij I2C-apparaten op enige afs
 
 ## Aansluitingen remote board
 
-| Connector | Functie |
+| Aanduiding | Functie |
 |-----------|---------|
-| P0–P7 | I/O pinnen, ongebufferd |
-| P8–P17 | Uitgangen, gebufferd via ULN2804 |
+| P0–P17 | I/O pinnen — ongebufferd, rechtstreeks op de PCF8575 |
+| O0–O17 | Uitgangen — gebufferd via ULN2804; volgen de P-pinnen mee (ook bij ingang) |
 | VPP / VCC / GND | Voeding |
 | J1 | I2C aansluiting (van shield via kabel) |
 | J2 | I2C doorlus naar volgend apparaat |
@@ -67,7 +67,7 @@ Zie [soldeertips en techniek](../docs/solderen.md) voor algemene soldeerinformat
 
 - De shield past standaard op een Arduino Uno R3. Gebruik "stackable headers" zodat de Uno nog via USB bereikbaar blijft.
 - De P82B715P werkt bidirectioneel — de "near" en "far" kant kunnen worden omgekeerd.
-- De ULN2804 op het remote board heeft open-collector uitgangen — sluit een pull-up weerstand aan op de externe voeding voor elke uitgang die je gebruikt.
+- De ULN2804 heeft open-collector uitgangen — de O-pinnen hebben een externe pull-up of belasting nodig om hoog te worden.
 
 ## KiCad bestanden
 
