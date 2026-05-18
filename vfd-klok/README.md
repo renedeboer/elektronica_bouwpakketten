@@ -22,7 +22,7 @@ Het bouwpakket is ontworpen voor de **Futaba 5-LT-01**, een vintage Japans VFD m
 - Relais voor het schakelen van een extern apparaat (bijv. lamp aan/uit op tijdstip)
 - Dimbare display (PWM via Arduino)
 - Microfooningang voor geluidsgevoeligheid (optioneel)
-- Voeding rechtstreeks op 230V wisselspanning
+- Voeding via 230V wisselspanning (PS1 + PS2), of via USB op de Arduino Nano (5V — handig voor ontwikkeling en testen)
 
 ### Hoe het werkt
 
@@ -30,7 +30,7 @@ Het VFD display heeft 5 posities (4 cijfers + dubbele punt). Elke positie wordt 
 
 De **RTC module** (gebaseerd op de DS1307) houdt de tijd bij, ook als de stroom uitvalt (met een CR2032 backup batterij op de module). De RTC module is een eigen ontwerp en ook te bestellen via de [webshop](https://rene-de-boer.nl) — zie ook de [GitHub pagina van de RTC module](https://github.com/renedeboer/ReneDeBoer_RTC). De **BMP280** meet temperatuur en luchtdruk via I2C.
 
-De 230V wisselspanning wordt omgezet naar 5V door een **IRM-03-5** AC/DC module, en naar 15V voor het VFD door een **MEE1S0515SC** DC/DC converter.
+Voor gebruik op 230V wisselspanning zorgt een **IRM-03-5** AC/DC module voor de 5V voeding, en een **MEE1S0515SC** DC/DC converter voor de 15V van het VFD. Deze voedingsmodules zijn optioneel: de klok werkt ook via de USB-aansluiting van de Arduino Nano, wat handig is tijdens ontwikkeling en testen.
 
 ## Schema
 
@@ -40,29 +40,29 @@ De 230V wisselspanning wordt omgezet naar 5V door een **IRM-03-5** AC/DC module,
 
 ## Stuklijst
 
-| Aanduiding | Waarde / Type | Aantal |
-|------------|--------------|--------|
-| A1 | Arduino Nano v3 | 1 |
-| U1, U3 | ULN2804A darlington array (DIP-18) | 2 |
-| U2 | 74HCT138 3-naar-8 decoder (DIP-16) | 1 |
-| PS1 | MEE1S0515SC DC/DC converter | 1 |
-| PS2 | IRM-03-5 AC/DC converter | 1 |
-| K1 | Fujitsu FTR-LYCA005x relais | 1 |
-| Q1 | NPN transistor (TO-92) | 1 |
-| D1 | Diode (DO-41) | 1 |
-| D2 | LED 5mm horizontaal | 1 |
-| F1 | Zekering + houder (TR5 Littelfuse) | 1 |
-| J1 | 4-pins header voor BMP280 module | 1 |
-| J2 | 5-pins JST-EH voor RTC module (DS1307) | 1 |
-| J3 | 18-pins VFD display connector | 1 |
-| J4 | 4-pins Molex KK-396 (230V / relaisuitgang) | 1 |
-| J5 | 8-pins JST-EH analoog ingang | 1 |
-| C1 | Condensator (C_Rect P5mm) | 1 |
-| C2, C3 | Elektrolytische condensator axiaal | 2 |
-| C4 | Schijfcondensator 9mm | 1 |
-| R1–R4 | 50Ω | 4 |
-| R5–R20 | 10kΩ | 16 |
-| R21–R24 | 1kΩ | 4 |
+| Aanduiding | Waarde / Type | Aantal | Opmerking |
+|------------|--------------|--------|-----------|
+| A1 | Arduino Nano v3 | 1 | |
+| U1, U3 | ULN2804A darlington array (DIP-18) | 2 | |
+| U2 | 74HCT138 3-naar-8 decoder (DIP-16) | 1 | |
+| PS1 | MEE1S0515SC DC/DC converter | 1 | optioneel — alleen voor 230V gebruik |
+| PS2 | IRM-03-5 AC/DC converter | 1 | optioneel — alleen voor 230V gebruik |
+| K1 | Fujitsu FTR-LYCA005x relais | 1 | |
+| Q1 | NPN transistor (TO-92) | 1 | |
+| D1 | Diode (DO-41) | 1 | |
+| D2 | LED 5mm horizontaal | 1 | |
+| F1 | Zekering + houder (TR5 Littelfuse) | 1 | |
+| J1 | 4-pins header voor BMP280 module | 1 | |
+| J2 | 5-pins JST-EH voor RTC module (DS1307) | 1 | |
+| J3 | 18-pins VFD display connector | 1 | |
+| J4 | 4-pins Molex KK-396 (230V / relaisuitgang) | 1 | |
+| J5 | 8-pins JST-EH analoog ingang | 1 | |
+| C1 | Condensator (C_Rect P5mm) | 1 | |
+| C2, C3 | Elektrolytische condensator axiaal | 2 | |
+| C4 | Schijfcondensator 9mm | 1 | |
+| R1–R4 | 50Ω | 4 | |
+| R5–R20 | 10kΩ | 16 | |
+| R21–R24 | 1kΩ | 4 | |
 
 ## Software
 
@@ -98,8 +98,8 @@ Dit bouwpakket werkt op **230V wisselspanning**. Neem de volgende voorzorgsmaatr
 
 ### De PCB
 
-![Lege PCB onderkant](fotos/vfd_pcb_leeg.jpg)
-*Lege PCB — onderkant met koperbanen*
+![Lege PCB bovenkant](fotos/vfd_pcb_leeg.jpg)
+*Lege PCB — bovenkant*
 
 ### Volgorde van montage
 
