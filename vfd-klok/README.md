@@ -30,7 +30,7 @@ Het VFD display heeft 5 posities (4 cijfers + dubbele punt). Elke positie wordt 
 
 De **RTC module** (gebaseerd op de DS1307) houdt de tijd bij, ook als de stroom uitvalt (met een CR2032 backup batterij op de module). De RTC module is een eigen ontwerp en ook te bestellen via de [webshop](https://rene-de-boer.nl) — zie ook de [GitHub pagina van de RTC module](https://github.com/renedeboer/ReneDeBoer_RTC). De **BMP280** meet temperatuur en luchtdruk via I2C.
 
-Voor gebruik op 230V wisselspanning zorgt een **IRM-03-5** AC/DC module voor de 5V voeding, en een **MEE1S0515SC** DC/DC converter voor de 15V van het VFD. Deze voedingsmodules zijn optioneel: de klok werkt ook via de USB-aansluiting van de Arduino Nano, wat handig is tijdens ontwikkeling en testen.
+Een **MEE1S0524SC** DC/DC converter zet de 5V om naar 24V voor de grids en segmenten van het VFD — deze is altijd vereist. De 5V kan komen van een **IRM-03-5** AC/DC module (230V wisselspanning), of via de USB-aansluiting van de Arduino Nano. De IRM-03-5 is daarmee optioneel: handig voor ontwikkeling en testen via USB, noodzakelijk voor zelfstandig gebruik op 230V.
 
 ## Schema
 
@@ -45,8 +45,8 @@ Voor gebruik op 230V wisselspanning zorgt een **IRM-03-5** AC/DC module voor de 
 | A1 | Arduino Nano v3 | 1 | |
 | U1, U3 | ULN2804A darlington array (DIP-18) | 2 | |
 | U2 | 74HCT138 3-naar-8 decoder (DIP-16) | 1 | |
-| PS1 | MEE1S0515SC DC/DC converter | 1 | optioneel — alleen voor 230V gebruik |
-| PS2 | IRM-03-5 AC/DC converter | 1 | optioneel — alleen voor 230V gebruik |
+| PS1 | MEE1S0524SC DC/DC converter (5V→24V) | 1 | VFD grid/segmenten voeding — altijd vereist |
+| PS2 | IRM-03-5 AC/DC converter (230V→5V) | 1 | optioneel — alleen voor 230V gebruik |
 | K1 | Fujitsu FTR-LYCA005x relais | 1 | |
 | Q1 | NPN transistor (TO-92) | 1 | |
 | D1 | Diode (DO-41) | 1 | |
