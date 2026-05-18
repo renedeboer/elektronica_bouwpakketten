@@ -2,14 +2,18 @@
 
 Een klok met een vacuüm fluorescentie display (VFD), aangestuurd door een Arduino Nano met RTC module en temperatuur-/drukmeting.
 
-<!-- foto: afgewerkt prototype (display aan, klok zichtbaar) -->
-<!-- foto: naakte PCB bovenkant -->
-<!-- foto: PCB onderkant / soldeerwerk -->
-<!-- foto: detail van het VFD display -->
+![VFD klok in werking](fotos/vfd_display_aan.jpg)
+![PCB volledig gemonteerd](fotos/vfd_pcb_volledig.jpg)
+![PCB zonder RTC module](fotos/vfd_pcb_zonder_rtc.jpg)
+![Lege PCB onderkant](fotos/vfd_pcb_leeg.jpg)
+![Futaba 5-LT-01 display voorkant](fotos/vfd_display_voorkant.jpg)
+![Futaba 5-LT-01 display achterkant](fotos/vfd_display_achterkant.jpg)
 
 ## Beschrijving
 
 Een VFD (Vacuum Fluorescent Display) is een oudere maar prachtige displaytechnologie — helder blauw-groen, met een retro uitstraling. Dit bouwpakket bouwt een volledige klok rondom zo'n display.
+
+Het bouwpakket is ontworpen voor de **Futaba 5-LT-01**, een vintage Japans VFD met 4 cijfers en een dubbele punt, in een hermetisch gesloten glazen behuizing. Dit type display is tweedehands verkrijgbaar.
 
 ### Functies
 
@@ -24,7 +28,7 @@ Een VFD (Vacuum Fluorescent Display) is een oudere maar prachtige displaytechnol
 
 Het VFD display heeft 5 posities (4 cijfers + dubbele punt). Elk positie wordt aangestuurd via een **74HC238** decoder en twee **ULN2801A** darlington arrays. De Arduino Nano multiplext de posities snel achter elkaar — zo snel dat het oog het niet ziet.
 
-De **DS1307** RTC module houdt de tijd bij, ook als de stroom uitvalt (met een CR2032 backup batterij op de module). De **BMP280** meet temperatuur en luchtdruk via I2C.
+De **RTC module** (gebaseerd op de DS1307) houdt de tijd bij, ook als de stroom uitvalt (met een CR2032 backup batterij op de module). De RTC module is een eigen ontwerp en ook te bestellen via de [webshop](https://rene-de-boer.nl) — zie ook de [GitHub pagina van de RTC module](https://github.com/renedeboer/ReneDeBoer_RTC). De **BMP280** meet temperatuur en luchtdruk via I2C.
 
 De 230V wisselspanning wordt omgezet naar 5V door een **IRM-03-5** AC/DC module, en naar 15V voor het VFD door een **MEE1S0515SC** DC/DC converter.
 
@@ -47,7 +51,7 @@ De 230V wisselspanning wordt omgezet naar 5V door een **IRM-03-5** AC/DC module,
 | D2 | LED 5mm horizontaal | 1 |
 | F1 | Zekering + houder (TR5 Littelfuse) | 1 |
 | J1 | 4-pins header voor BMP280 module | 1 |
-| J2 | 5-pins JST-EH voor DS1307 module | 1 |
+| J2 | 5-pins JST-EH voor RTC module (DS1307) | 1 |
 | J3 | 18-pins VFD display connector | 1 |
 | J4 | 4-pins Molex KK-396 (230V / relaisuitgang) | 1 |
 | J5 | 8-pins JST-EH analoog ingang | 1 |
