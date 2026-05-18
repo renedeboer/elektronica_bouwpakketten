@@ -1,0 +1,49 @@
+# Licentie / License
+
+Copyright (c) 2025 René de Boer
+
+---
+
+## PCB ontwerpen en artwork
+
+De PCB layouts, silkscreen artwork en grafische ontwerpen in deze repository zijn het creatieve werk van René de Boer en zijn **Alle rechten voorbehouden** tenzij anders vermeld.
+
+Je mag de bestanden bekijken en gebruiken voor persoonlijk, niet-commercieel gebruik (zelf bouwen). Reproductie, verkoop of commercieel gebruik zonder schriftelijke toestemming is niet toegestaan.
+
+---
+
+## Schakelingen
+
+De elektronische schakelingen in dit project zijn gebaseerd op publiek domein bronnen en fabrikantsdatasheets:
+
+- **555-timer en 4017 circuits** — gebaseerd op klassieke schakelingen zoals beschreven in de datasheets van NE555/LM555 (Texas Instruments, Philips Semiconductors) en CD4017 (Texas Instruments). De basisschakelingen zijn vrij van intellectueel eigendom.
+
+- **Passieve phono voorversterker** — ontleend aan de OPA606 datasheet, waar het circuit wordt toegeschreven aan **Walter G. Jung**. Bronvermelding: *Walter G. Jung, OPA606 Datasheet Application Note, Burr-Brown / Texas Instruments.*
+
+- **VFD klok** — eigen ontwerp van René de Boer.
+
+- **Angry Cats From Space** — eigen ontwerp van René de Boer. De charlieplexing techniek is een bekende methode (zie o.a. Wikipedia). De artwork (kat-afbeeldingen) zijn ideeën van René de Boer, uitgewerkt met AI-hulp en handmatig getraced en omgezet naar PCB silkscreen.
+
+---
+
+## Software
+
+De Arduino/ATtiny85 software in de `software/` mappen is vrijgegeven onder de **MIT Licentie**:
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

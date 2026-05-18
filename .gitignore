@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# KiCad backups en tijdelijke bestanden
+*-backups/
+*.kicad_prl
+fp-info-cache
+*-job.gbrjob
+freerouting.dsn
+temp-freerouting.dsn
+place_footprints.log
+place_footprints.ini
+_autosave-*
+#auto_saved_files#/
+
+# Archives (productie-zips zitten direct in de productie-mappen van KiCad, niet hier)
+*.zip
+
+# Editor
+*.swp
+*~
