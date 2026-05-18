@@ -3,17 +3,17 @@
 Een klok met een vacuüm fluorescentie display (VFD), aangestuurd door een Arduino Nano met RTC module en temperatuur-/drukmeting.
 
 ![VFD klok in werking](fotos/vfd_display_aan.jpg)
-![PCB volledig gemonteerd](fotos/vfd_pcb_volledig.jpg)
-![PCB zonder RTC module](fotos/vfd_pcb_zonder_rtc.jpg)
-![Lege PCB onderkant](fotos/vfd_pcb_leeg.jpg)
-![Futaba 5-LT-01 display voorkant](fotos/vfd_display_voorkant.jpg)
-![Futaba 5-LT-01 display achterkant](fotos/vfd_display_achterkant.jpg)
 
 ## Beschrijving
 
 Een VFD (Vacuum Fluorescent Display) is een oudere maar prachtige displaytechnologie — helder blauw-groen, met een retro uitstraling. Dit bouwpakket bouwt een volledige klok rondom zo'n display.
 
 Het bouwpakket is ontworpen voor de **Futaba 5-LT-01**, een vintage Japans VFD met 4 cijfers en een dubbele punt, in een hermetisch gesloten glazen behuizing. Dit type display is tweedehands verkrijgbaar.
+
+| | |
+|---|---|
+| ![Futaba 5-LT-01 voorkant](fotos/vfd_display_voorkant.jpg) | ![Futaba 5-LT-01 achterkant](fotos/vfd_display_achterkant.jpg) |
+| *Futaba 5-LT-01 — voorkant (alle segmenten)* | *Achterkant met aansluitpinnen* |
 
 ### Functies
 
@@ -26,7 +26,7 @@ Het bouwpakket is ontworpen voor de **Futaba 5-LT-01**, een vintage Japans VFD m
 
 ### Hoe het werkt
 
-Het VFD display heeft 5 posities (4 cijfers + dubbele punt). Elk positie wordt aangestuurd via een **74HCT138** decoder en twee **ULN2804A** darlington arrays. De Arduino Nano multiplext de posities snel achter elkaar — zo snel dat het oog het niet ziet.
+Het VFD display heeft 5 posities (4 cijfers + dubbele punt). Elke positie wordt aangestuurd via een **74HCT138** decoder en twee **ULN2804A** darlington arrays. De Arduino Nano multiplext de posities snel achter elkaar — zo snel dat het oog het niet ziet.
 
 De **RTC module** (gebaseerd op de DS1307) houdt de tijd bij, ook als de stroom uitvalt (met een CR2032 backup batterij op de module). De RTC module is een eigen ontwerp en ook te bestellen via de [webshop](https://rene-de-boer.nl) — zie ook de [GitHub pagina van de RTC module](https://github.com/renedeboer/ReneDeBoer_RTC). De **BMP280** meet temperatuur en luchtdruk via I2C.
 
@@ -96,24 +96,34 @@ Dit bouwpakket werkt op **230V wisselspanning**. Neem de volgende voorzorgsmaatr
 - De zekering F1 beschermt het circuit — vervang uitsluitend met de opgegeven waarde
 - Laat kinderen nooit onbegeleid met dit bouwpakket werken
 
+### De PCB
+
+![Lege PCB onderkant](fotos/vfd_pcb_leeg.jpg)
+*Lege PCB — onderkant met koperbanen*
+
 ### Volgorde van montage
 
-1. SMD onderdelen (indien aanwezig)
-2. Weerstanden R1–R24
-3. Condensatoren C1–C4 (let op polariteit C2, C3)
-4. Diode D1 (let op richting)
-5. Transistor Q1 (let op vlakke kant)
-6. IC-sockets voor U1, U2, U3
-7. LED D2
-8. Zekeringhouder F1
-9. Relais K1
-10. DC/DC converter PS1
-11. AC/DC converter PS2
-12. Connectors J1–J5
-13. VFD display connector J3
-14. IC's in de sockets plaatsen
-15. Arduino Nano op headers
-16. Modules (DS1307, BMP280) aansluiten
+1. Weerstanden R1–R24
+2. Condensatoren C1–C4 (let op polariteit C2, C3)
+3. Diode D1 (let op richting)
+4. Transistor Q1 (let op vlakke kant)
+5. IC-sockets voor U1, U2, U3
+6. LED D2
+7. Zekeringhouder F1
+8. Relais K1
+9. DC/DC converter PS1
+10. AC/DC converter PS2
+11. Connectors J1–J5
+12. VFD display connector J3
+13. IC's in de sockets plaatsen
+14. Arduino Nano op headers
+15. Modules (RTC, BMP280) aansluiten
+
+![PCB zonder RTC module](fotos/vfd_pcb_zonder_rtc.jpg)
+*PCB volledig bestukt, voor plaatsing van de RTC module*
+
+![PCB volledig gemonteerd](fotos/vfd_pcb_volledig.jpg)
+*PCB volledig gemonteerd inclusief RTC module (rood) en Arduino Nano*
 
 ## KiCad bestanden
 
