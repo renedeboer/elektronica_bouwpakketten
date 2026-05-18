@@ -106,7 +106,7 @@ copy_ibom     "$KICAD_DIR/passivephono/bom/ibom.html" \
 
 echo ""
 echo "=== Arduino I2C Shield ==="
-export_schema "$KICAD_DIR/unoshield/unoshield.kicad_sch" \
+export_schema "$KICAD_DIR/P82B715P/uno-shield.kicad_sch" \
               "$REPO_DIR/arduino-i2c-shield/schema"
 export_schema "$KICAD_DIR/P82B715P/P82B715P.kicad_sch" \
               "$REPO_DIR/arduino-i2c-shield/schema"

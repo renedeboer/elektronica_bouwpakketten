@@ -20,7 +20,7 @@ Dit bouwpakket bestaat uit **twee PCBs**:
 ## Schema
 
 **Arduino Uno Shield:**
-![Uno Shield schema](schema/unoshield.svg)
+![Uno Shield schema](schema/uno-shield.svg)
 
 **Remote I2C board (P82B715P):**
 ![P82B715P schema](schema/P82B715P.svg)
