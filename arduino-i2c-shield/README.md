@@ -72,3 +72,13 @@ Zie [soldeertips en techniek](../docs/solderen.md) voor algemene soldeerinformat
 ## KiCad bestanden
 
 Beide schema's en PCB bestanden staan in: `~/Documents/KiCad/projects/P82B715P/`
+
+---
+
+## Milieu-informatie
+
+**Belangrijke milieu-informatie betreffende dit product**
+
+Dit symbool op het toestel of de verpakking geeft aan dat, als het na zijn levenscyclus wordt weggeworpen, dit toestel schade kan toebrengen aan het milieu. Gooi dit toestel (en eventuele batterijen) niet bij het gewone huishoudelijke afval; het moet bij een gespecialiseerd bedrijf terechtkomen voor recyclage. U dient dit toestel naar uw verdeler of naar een lokaal recyclagepunt te brengen. Respecteer de plaatselijke milieuwetgeving. Heeft u vragen, contacteer dan de plaatselijke autoriteiten inzake afvalverwijdering.
+
+Producten mogen altijd worden teruggebracht of opgestuurd via de webshop op [rene-de-boer.nl](https://rene-de-boer.nl).

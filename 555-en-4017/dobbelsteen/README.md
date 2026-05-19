@@ -7,6 +7,10 @@ Een elektronische dobbelsteen met 7 LED's in dobbelsteenpatroon, aangestuurd doo
 | ![Lege PCB](fotos/dobbelsteen_pcb_leeg.jpg) | ![Bestukte PCB](fotos/dobbelsteen_pcb_bestukt.jpg) |
 | *Lege PCB — ronde "Roll the Dice" vormfactor* | *Bestukt prototype* |
 
+## In werking
+
+![Elektronische Dobbelsteen animatie](fotos/dobbelsteen.gif)
+
 ## Beschrijving
 
 De LM555 oscilleert met hoge frequentie zolang de drukknop ingedrukt is. De CD4017 telt de pulsen snel op. Zodra je de knop loslaat, stopt de oscillatie en blijft de teller staan op een willekeurige uitgang. Zes transistoren (BC557 PNP en BC/BRN2222A NPN) schakelen de zeven LED's aan in het juiste dobbelsteenpatroon voor de waarden 1 t/m 6.
@@ -43,11 +47,11 @@ De schuifschakelaar is de aan/uit schakelaar.
 De 7 LED's zijn geplaatst in het klassieke patroon van een dobbelsteen:
 
 ```
-[1]   [2]   [3]
+[D2]      [D6]
 
-[4]   [5]   [6]
+[D4] [D1] [D5]
 
-[7]
+[D7]      [D3]
 ```
 
 De transistorenlogica zorgt dat bij elke uitgang van de 4017 (1 t/m 6) de juiste combinatie van LED's oplicht.
@@ -65,3 +69,13 @@ Zie de [seriepagina](../README.md) voor de algemene volgorde van montage.
 ## KiCad bestanden
 
 Projectbestanden: `~/Documents/KiCad/projects/dice/dice/`
+
+---
+
+## Milieu-informatie
+
+**Belangrijke milieu-informatie betreffende dit product**
+
+Dit symbool op het toestel of de verpakking geeft aan dat, als het na zijn levenscyclus wordt weggeworpen, dit toestel schade kan toebrengen aan het milieu. Gooi dit toestel (en eventuele batterijen) niet bij het gewone huishoudelijke afval; het moet bij een gespecialiseerd bedrijf terechtkomen voor recyclage. U dient dit toestel naar uw verdeler of naar een lokaal recyclagepunt te brengen. Respecteer de plaatselijke milieuwetgeving. Heeft u vragen, contacteer dan de plaatselijke autoriteiten inzake afvalverwijdering.
+
+Producten mogen altijd worden teruggebracht of opgestuurd via de webshop op [rene-de-boer.nl](https://rene-de-boer.nl).

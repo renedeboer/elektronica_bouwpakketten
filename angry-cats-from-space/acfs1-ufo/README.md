@@ -44,3 +44,13 @@ De Gerber bestanden voor PCB productie zijn beschikbaar in de `production/` map 
 ## Software
 
 Firmware in ontwikkeling — zie [seriepagina](../README.md) voor de huidige status en programmeernstructies.
+
+---
+
+## Milieu-informatie
+
+**Belangrijke milieu-informatie betreffende dit product**
+
+Dit symbool op het toestel of de verpakking geeft aan dat, als het na zijn levenscyclus wordt weggeworpen, dit toestel schade kan toebrengen aan het milieu. Gooi dit toestel (en eventuele batterijen) niet bij het gewone huishoudelijke afval; het moet bij een gespecialiseerd bedrijf terechtkomen voor recyclage. U dient dit toestel naar uw verdeler of naar een lokaal recyclagepunt te brengen. Respecteer de plaatselijke milieuwetgeving. Heeft u vragen, contacteer dan de plaatselijke autoriteiten inzake afvalverwijdering.
+
+Producten mogen altijd worden teruggebracht of opgestuurd via de webshop op [rene-de-boer.nl](https://rene-de-boer.nl).

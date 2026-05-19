@@ -19,8 +19,9 @@ De ZX Spectrum heeft van huis uit geen I2C bus. Deze uitbreidingskaart voegt I2C
   - 1 segment verbonden met de RTC CLK uitgang — knippert op 1Hz als de [RTC module](https://github.com/renedeboer/ReneDeBoer_RTC) aangesloten is (de RTC module werkt met elke I2C master, ook de ZX Spectrum)
 - **Kempston-compatibele joystick interface** (DB9) — gecombineerd op deze kaart zodat I2C en joystick gelijktijdig werken
 - Adresbepaling via **74LS138** decoder
-- Busbuffering via **74LS240** en **4049**
-- DIP-schakelaar voor I2C adresselectie
+- Busbuffering via **74LS240**
+- Klokgenerator voor PCF8584 via **4049** hex inverter + kristal (onafhankelijk van de Z80 klok)
+- DIP-schakelaar voor in-/uitschakelen van de I2C **pullup weerstanden**
 - Sluit aan op de **ZX Spectrum 48K edge connector**
 
 ### Hoe het werkt
@@ -57,14 +58,14 @@ De werkingsfoto's zijn gemaakt met het prototype op gaatjesprint — de PCB werk
 | U2 | PCF8574P I2C I/O expander (DIP) | 1 |
 | U3 | 74LS138 3-naar-8 decoder (DIP) | 1 |
 | U4 | 74LS240 octal buffer (DIP) | 1 |
-| U5 | 4049 hex inverter (DIP) | 1 |
+| U5 | 4049 hex inverter — klokgenerator voor PCF8584 (DIP) | 1 |
 | Y1 | Kristal (voor PCF8584 klok) | 1 |
 | J1 | ZX Spectrum 48K edge connector | 1 |
 | J2 | OLED display connector (I2C) | 1 |
 | BAR1 | HDSP-4850 10-segment bargraph LED (groen) | 1 |
 | J4 | DB9 joystick connector (Kempston) | 1 |
 | J5 | Uitbreidingsconnector | 1 |
-| SW1 | DIP-schakelaar 2-polig (adresselectie) | 1 |
+| SW1 | DIP-schakelaar 2-polig (pullup weerstanden I2C bus) | 1 |
 | D1, D2 | 1N914 signaaldiode | 2 |
 | C1–C9 | Diverse condensatoren (100nF, 22pF, 15µF, 1nF) | 9 |
 | R1–R19 | Diverse weerstanden (10kΩ, 900Ω, 1MΩ) | 19 |
@@ -123,10 +124,20 @@ Zie [soldeertips en techniek](../docs/solderen.md) voor algemene soldeerinformat
 ### Specifieke aandachtspunten
 
 - De **edge connector** heeft een rasterafstand van 3,96mm — gebruik de juiste connector.
-- De **PCF8584** heeft een externe klokbron nodig (kristal + 22pF condensatoren).
+- De **PCF8584** klokgenerator bestaat uit de **4049** hex inverter met kristal en 22pF condensatoren — onafhankelijk van de Z80 systeemklok.
 - Gebruik uitsluitend **LS-serie of HCT-serie** logica voor compatibiliteit met de 5V ZX Spectrum bus.
 - Controleer het I2C adres van je display en stel de DIP-schakelaar dienovereenkomstig in.
 
 ## KiCad bestanden
 
 Projectbestanden: `~/Documents/KiCad/projects/zxi2c/`
+
+---
+
+## Milieu-informatie
+
+**Belangrijke milieu-informatie betreffende dit product**
+
+Dit symbool op het toestel of de verpakking geeft aan dat, als het na zijn levenscyclus wordt weggeworpen, dit toestel schade kan toebrengen aan het milieu. Gooi dit toestel (en eventuele batterijen) niet bij het gewone huishoudelijke afval; het moet bij een gespecialiseerd bedrijf terechtkomen voor recyclage. U dient dit toestel naar uw verdeler of naar een lokaal recyclagepunt te brengen. Respecteer de plaatselijke milieuwetgeving. Heeft u vragen, contacteer dan de plaatselijke autoriteiten inzake afvalverwijdering.
+
+Producten mogen altijd worden teruggebracht of opgestuurd via de webshop op [rene-de-boer.nl](https://rene-de-boer.nl).

@@ -43,7 +43,7 @@ Meer info over de hele serie: [555-timer en 4017](555-en-4017/)
 
 | Kit | Beschrijving |
 |-----|-------------|
-| [Phono Voorversterker (RIAA)](passieve-phono/) | Actieve RIAA phono voorversterker met OPA606, stereo, gebaseerd op Walter G. Jung |
+| [Phono Voorversterker](passieve-phono/) | Stereo phono voorversterker met passief RIAA netwerk tussen twee OPA606 trappen (Walter G. Jung topologie) |
 | [Arduino I2C Shield](arduino-i2c-shield/) | Arduino Uno shield met P82B715P I2C bus extender |
 | [VFD Klok](vfd-klok/) | Vacuüm fluorescentie display klok met Arduino Nano en RTC |
 | [ZX Spectrum I2C](zx-spectrum-i2c/) | I2C uitbreidingskaart voor de ZX Spectrum 48K met BASIC software bibliotheek |

@@ -7,6 +7,10 @@ Een LED die langzaam en vloeiend aan en uit ademhaalt, alsof hij leeft.
 | ![Lege PCB](fotos/fading_pcb_leeg.jpg) | ![Bestukte PCB](fotos/fading_pcb_bestukt.jpg) |
 | *Lege PCB* | *Bestukt prototype* |
 
+## In werking
+
+![LED Fading animatie](fotos/fading.gif)
+
 ## Beschrijving
 
 De NE555 genereert een laagfrequent blokgolfsignaal. Een transistor (BC547) en een elektrolytische condensator zorgen samen voor de langzame op- en afbouw van de spanning door de LED — het zogenaamde "ademhaling" effect.
@@ -44,3 +48,13 @@ Zie de [seriepagina](../README.md) voor de algemene volgorde van montage.
 ## KiCad bestanden
 
 Projectbestanden: `~/Documents/KiCad/projects/555/555/555fading/`
+
+---
+
+## Milieu-informatie
+
+**Belangrijke milieu-informatie betreffende dit product**
+
+Dit symbool op het toestel of de verpakking geeft aan dat, als het na zijn levenscyclus wordt weggeworpen, dit toestel schade kan toebrengen aan het milieu. Gooi dit toestel (en eventuele batterijen) niet bij het gewone huishoudelijke afval; het moet bij een gespecialiseerd bedrijf terechtkomen voor recyclage. U dient dit toestel naar uw verdeler of naar een lokaal recyclagepunt te brengen. Respecteer de plaatselijke milieuwetgeving. Heeft u vragen, contacteer dan de plaatselijke autoriteiten inzake afvalverwijdering.
+
+Producten mogen altijd worden teruggebracht of opgestuurd via de webshop op [rene-de-boer.nl](https://rene-de-boer.nl).

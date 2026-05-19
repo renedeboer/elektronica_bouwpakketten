@@ -18,6 +18,12 @@ _autosave-*
 # Archives (productie-zips zitten direct in de productie-mappen van KiCad, niet hier)
 *.zip
 
+# Video bestanden (worden vervangen door GIFs)
+*.MOV
+*.mov
+*.mp4
+*.MP4
+
 # Editor
 *.swp
 *~

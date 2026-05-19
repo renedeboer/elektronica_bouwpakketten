@@ -7,6 +7,10 @@ Een afwisselend rood/blauw zwaailicht effect met 12 LED's, twee transistoren en 
 | ![Lege PCB](fotos/politielicht_pcb_leeg.jpg) | ![Bestukte PCB](fotos/politielicht_pcb_bestukt.jpg) |
 | *Lege PCB* | *Bestukt prototype* |
 
+## In werking
+
+![Politielicht animatie](fotos/politielicht.gif)
+
 ## Beschrijving
 
 De NE555 genereert pulsen voor de CD4017 decade counter. De 4017 verdeelt de LED's over twee groepen (rood en blauw) via twee BC547 transistoren. Het resultaat is een overtuigend politie-zwaailicht effect.
@@ -46,3 +50,13 @@ Zie de [seriepagina](../README.md) voor de algemene volgorde van montage.
 ## KiCad bestanden
 
 Projectbestanden: `~/Documents/KiCad/projects/555/555/555police/`
+
+---
+
+## Milieu-informatie
+
+**Belangrijke milieu-informatie betreffende dit product**
+
+Dit symbool op het toestel of de verpakking geeft aan dat, als het na zijn levenscyclus wordt weggeworpen, dit toestel schade kan toebrengen aan het milieu. Gooi dit toestel (en eventuele batterijen) niet bij het gewone huishoudelijke afval; het moet bij een gespecialiseerd bedrijf terechtkomen voor recyclage. U dient dit toestel naar uw verdeler of naar een lokaal recyclagepunt te brengen. Respecteer de plaatselijke milieuwetgeving. Heeft u vragen, contacteer dan de plaatselijke autoriteiten inzake afvalverwijdering.
+
+Producten mogen altijd worden teruggebracht of opgestuurd via de webshop op [rene-de-boer.nl](https://rene-de-boer.nl).
