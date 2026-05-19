@@ -58,7 +58,7 @@ De ATtiny85 wordt geprogrammeerd via ISP met een Arduino als programmer:
 
 | Variant | Gewone LED 3mm | Bidirectionele LED 3mm | Bidirectionele LED 5mm |
 |---------|---------------|------------------------|------------------------|
-| ACFS1 — UFO | D1–D8 (8×) | D9, D12–D14 (4×) | — |
+| ACFS1 — UFO | D1–D8 (8×) | D9–D14 (6×) | — |
 | ACFS2 — Raket | D1–D20 (20×) | — | — |
 | ACFS3 — Ruimtepak | — | D12–D18 (7×) | D9 (1×) |
 | ACFS4 — Maan | D1–D8 (8×) | D12–D14 (3×) | D9 (1×) |
