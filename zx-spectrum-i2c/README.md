@@ -1,21 +1,20 @@
-# ZX Spectrum I2C Uitbreidingskaart
+# ZX Spectrum I2C Interface
 
-Een uitbreidingskaart voor de **ZX Spectrum 48K** die I2C communicatie mogelijk maakt via de edge connector. Inclusief ZX BASIC software bibliotheek voor het aansturen van displays en I2C apparaten.
+Een uitbreidingskaart voor de **ZX Spectrum 48K** die I2C communicatie mogelijk maakt via de edge connector. Inclusief Kempston-compatibele joystick interface en ZX BASIC softwarebibliotheek.
 
-<!-- foto: PCB voorkant -->
-<!-- foto: PCB op ZX Spectrum aangesloten -->
-<!-- foto: werkend met OLED of LCD display -->
+![ZX Spectrum I2C Interface PCB bestukt](fotos/zxi2c_pcb_bestukt.jpg)
 
 ## Beschrijving
 
-De ZX Spectrum heeft van huis uit geen I2C bus. Deze uitbreidingskaart voegt I2C toe via de **PCF8584** I2C bus controller, die op het ZX Spectrum busadres wordt aangesloten. Zo zijn alle moderne I2C sensoren, displays en modules te gebruiken vanuit ZX BASIC.
+De ZX Spectrum heeft van huis uit geen I2C bus. Deze uitbreidingskaart voegt I2C toe via de **PCF8584** I2C bus controller, die op het ZX Spectrum busadres wordt aangesloten. Zo zijn alle moderne I2C sensoren, displays en modules te gebruiken vanuit ZX BASIC — op een computer uit 1982.
 
 ### Functies
 
 - I2C bus via **PCF8584** controller (eigen klokgenerator, onafhankelijk van de Z80)
 - 8-bit I/O expander via **PCF8574P**
-- Aansluiting voor **0,91" OLED display** (I2C)
+- Aansluiting voor **0,91" OLED display** (I2C, rechtstreeks op de kaart)
 - Aansluiting voor **HDSP-4850** 4-karakter alfanumeriek LED display
+- **Kempston-compatibele joystick interface** (DB9)
 - Adresbepaling via **74LS138** decoder
 - Busbuffering via **74LS240** en **4049**
 - DIP-schakelaar voor I2C adresselectie
@@ -23,18 +22,23 @@ De ZX Spectrum heeft van huis uit geen I2C bus. Deze uitbreidingskaart voegt I2C
 
 ### Hoe het werkt
 
-De PCF8584 verschijnt als een geheugenadres in de ZX Spectrum adresruimte. Via `IN`/`OUT` instructies in machinecode — aangeroepen vanuit BASIC — kan de Z80 I2C berichten versturen en ontvangen. De PCF8584 regelt zelf de I2C timing en protocollen.
+De PCF8584 verschijnt als een geheugenadres op de ZX Spectrum bus. Via `IN`/`OUT` instructies in machinecode — aangeroepen vanuit BASIC — stuurt de Z80 I2C berichten aan. De PCF8584 regelt zelf de I2C timing en protocollen.
 
-## Oscilloscoopmetingen
+## In werking
 
-Tijdens ontwikkeling zijn de I2C signalen gemeten om correcte werking te verifiëren.
+De werkingsfoto's zijn gemaakt met het prototype op gaatjesprint — de PCB werkt identiek.
 
 | | |
 |---|---|
-| ![Klokgenerator PCF8584](fotos/zxi2c_oscilloscoop_klok.jpg) | ![I2C startconditie](fotos/zxi2c_oscilloscoop_i2c_start.jpg) |
-| *Klokgenerator PCF8584 (~50ns/div)* | *I2C startconditie en SCL pulsen (1ms/div)* |
-| ![I2C datatransfer](fotos/zxi2c_oscilloscoop_i2c_data.jpg) | ![I2C signaal detail](fotos/zxi2c_oscilloscoop_i2c_signaal.jpg) |
-| *I2C datatransfer met ACK (1ms/div)* | *I2C SDA en SCL detail (500µs/div)* |
+| ![LCD versie — HELLO SPECTRUM](fotos/zxi2c_prototype_lcd.jpg) | ![OLED versie — HELLO OLED](fotos/zxi2c_prototype_oled.jpg) |
+| *LCD versie: 16×2 LCD via I2C backpack (PCF8574T → HD44780)* | *OLED versie: 0,91" OLED direct via I2C* |
+
+## De PCB
+
+| | |
+|---|---|
+| ![Lege PCB](fotos/zxi2c_pcb_leeg.jpg) | ![Bestukte PCB](fotos/zxi2c_pcb_bestukt.jpg) |
+| *Lege PCB — bovenkant* | *Volledig bestukt met OLED display gemonteerd* |
 
 ## Schema
 
@@ -55,7 +59,8 @@ Tijdens ontwikkeling zijn de I2C signalen gemeten om correcte werking te verifi�
 | J1 | ZX Spectrum 48K edge connector | 1 |
 | J2 | OLED display connector (I2C) | 1 |
 | J3 | HDSP-4850 display connector | 1 |
-| J4, J5 | Uitbreidingsconnectoren | 2 |
+| J4 | DB9 joystick connector (Kempston) | 1 |
+| J5 | Uitbreidingsconnector | 1 |
 | SW1 | DIP-schakelaar 2-polig (adresselectie) | 1 |
 | D1, D2 | 1N914 signaaldiode | 2 |
 | C1–C9 | Diverse condensatoren (100nF, 22pF, 15µF, 1nF) | 9 |
@@ -80,14 +85,12 @@ De ZX BASIC software staat in de [software map](software/). Bronbestanden (`.txt
 
 ### Compileren en laden
 
-De `.txt` bronbestanden zijn ZX BASIC in platte tekst, gecompileerd met `zmakebas`:
-
 ```bash
 cd software
 zmakebas -l -a @start -o i2clib.tap i2clib.txt
 ```
 
-De `.tap` bestanden worden geladen op een echte ZX Spectrum of emulator (bijv. [Fuse](http://fuse-emulator.sourceforge.net/)):
+De `.tap` bestanden worden geladen op een echte ZX Spectrum of emulator:
 
 ```
 LOAD ""
@@ -95,13 +98,20 @@ LOAD ""
 
 ### Architectuur van i2clib
 
-De bibliotheek combineert ZX BASIC met een ingebedde machinecode routine:
-
-- **BASIC deel** — initialisatie, LCD-commando's, cursor positionering, stringweergave
-- **Machinecode deel** (48 bytes op adres 64900) — polls de PCF8584 PIN-bit na elk byte, geen vertraging nodig
+- **BASIC deel** — initialisatie, LCD-commando's, cursor, stringweergave
+- **Machinecode deel** (48 bytes op adres 64900) — polls PCF8584 PIN-bit na elk byte
 - **Sendbuffer** (op adres 64948) — `[aantal_bytes] [byte0..byteN]`
 
-I2C apparaatadres is instelbaar via de DIP-schakelaar op de kaart.
+## Oscilloscoopmetingen
+
+Gemeten tijdens ontwikkeling om correcte I2C signaalvormen te verifiëren.
+
+| | |
+|---|---|
+| ![Klokgenerator](fotos/zxi2c_oscilloscoop_klok.jpg) | ![I2C startconditie](fotos/zxi2c_oscilloscoop_i2c_start.jpg) |
+| *PCF8584 klokgenerator (~50ns/div)* | *I2C startconditie en SCL pulsen (1ms/div)* |
+| ![I2C datatransfer](fotos/zxi2c_oscilloscoop_i2c_data.jpg) | ![I2C signaal detail](fotos/zxi2c_oscilloscoop_i2c_signaal.jpg) |
+| *I2C datatransfer met ACK (1ms/div)* | *SDA en SCL detail (500µs/div)* |
 
 ## Bouwinstructies
 
@@ -109,9 +119,9 @@ Zie [soldeertips en techniek](../docs/solderen.md) voor algemene soldeerinformat
 
 ### Specifieke aandachtspunten
 
-- De **edge connector** voor de ZX Spectrum heeft een specifieke rasterafstand (3,96mm) — gebruik de juiste connector.
-- De **PCF8584** heeft een externe klok nodig (kristal + 22pF condensatoren). Zorg dat het kristal goed gesoldeerd is voor betrouwbare I2C timing.
-- De **74LS240** en **4049** bufferen de ZX bus signalen — gebruik uitsluitend LS-serie of HCT-serie voor compatibiliteit met de 5V ZX Spectrum bus.
+- De **edge connector** heeft een rasterafstand van 3,96mm — gebruik de juiste connector.
+- De **PCF8584** heeft een externe klokbron nodig (kristal + 22pF condensatoren).
+- Gebruik uitsluitend **LS-serie of HCT-serie** logica voor compatibiliteit met de 5V ZX Spectrum bus.
 - Controleer het I2C adres van je display en stel de DIP-schakelaar dienovereenkomstig in.
 
 ## KiCad bestanden
