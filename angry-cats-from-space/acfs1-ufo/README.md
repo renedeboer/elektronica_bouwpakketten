@@ -35,7 +35,6 @@ Zie de [seriepagina](../README.md) voor de algemene volgorde van montage en de [
 - De LED's D1–D8 zitten aan de voorkant van de PCB. Let op de polariteit (richtingsmarkering op de silkscreen).
 - De bidirectionele LED's D9–D14 (dual-kleur) bepalen het kleureffect. Welke kleur brandt hangt af van de stroomrichting; dit wisselt de software automatisch af.
 - Monteer de bidirectionele LED's op gelijke hoogte voor een mooi resultaat.
-- Let op de richtingsmarkering voor D1–D8 op de silkscreen.
 
 ## Schema
 
