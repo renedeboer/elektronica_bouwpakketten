@@ -1,6 +1,6 @@
 # Elektronische Dobbelsteen
 
-Een elektronische dobbelsteen met 7 LED's in dobbelsteenpatroon, aangestuurd door een LM555 en CD4017. Druk op de knop, laat los en de uitkomst verschijnt.
+Een elektronische dobbelsteen met 7 LED's in dobbelsteenpatroon, aangestuurd door een LM555 en CD4017. Schud de dobbelsteen, stop en de uitkomst verschijnt.
 
 | | |
 |---|---|
@@ -13,7 +13,7 @@ Een elektronische dobbelsteen met 7 LED's in dobbelsteenpatroon, aangestuurd doo
 
 ## Beschrijving
 
-De LM555 oscilleert met hoge frequentie zolang de drukknop ingedrukt is. De CD4017 telt de pulsen snel op. Zodra je de knop loslaat, stopt de oscillatie en blijft de teller staan op een willekeurige uitgang. Zes transistoren (BC557 PNP en BC/BRN2222A NPN) schakelen de zeven LED's aan in het juiste dobbelsteenpatroon voor de waarden 1 t/m 6.
+De LM555 oscilleert met hoge frequentie zolang de balschakelaar (normally closed) contact maakt. Bij schudden verliest de bal even contact, waarna de oscillatie stopt en de teller blijft staan op een willekeurige uitgang. Zes transistoren (BC557 PNP en BC/BRN2222A NPN) schakelen de zeven LED's aan in het juiste dobbelsteenpatroon voor de waarden 1 t/m 6.
 
 De schuifschakelaar is de aan/uit schakelaar.
 
@@ -38,7 +38,7 @@ De schuifschakelaar is de aan/uit schakelaar.
 | R8 | 10MΩ | 1 |
 | R9–R21 | 1kΩ | 13 |
 | D1–D7 | LED (kleur naar keuze) | 7 |
-| SW1 | Drukknop (normally open) | 1 |
+| SW1 | Balschakelaar (normally closed) | 1 |
 | SW2 | Schuifschakelaar DPDT | 1 |
 | BT1 | 9V batterijclip | 1 |
 
@@ -63,7 +63,7 @@ Zie de [seriepagina](../README.md) voor de algemene volgorde van montage.
 ### Specifieke aandachtspunten
 
 - Let bij de transistoren goed op het type: de BC557 is een **PNP** type, de BRN2222A is een **NPN** type. Ze zijn allebei aanwezig in dit circuit en hebben een verschillende werking — verwisselen geeft een niet-werkende schakeling.
-- De drukknop SW1 is **normally open** (geen contact in rust) — dit is het standaard type.
+- **SW1** is een **balschakelaar** (normally closed) — de bal maakt normaal contact; bij schudden verliest hij dit even. Zorg dat de balschakelaar vrij kan bewegen in de behuizing.
 - **C1 (10µF)** is elektrolytisch — let op polariteit.
 
 ## KiCad bestanden
