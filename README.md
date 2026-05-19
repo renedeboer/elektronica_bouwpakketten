@@ -37,7 +37,7 @@ Vier bouwpakketten op basis van de klassieke NE555/LM555 timer IC en de CD4017 d
 | [LED Fading](555-en-4017/fading/) | LED die langzaam aan en uit ademhaalt |
 | [Knight Rider](555-en-4017/knightrider/) | 5 LEDs die heen en weer lopen |
 | [Politielicht](555-en-4017/politielicht/) | Rood/blauw zwaailicht effect |
-| [Elektronische Dobbelsteen](555-en-4017/dobbelsteen/) | Dobbelsteen met drukknop |
+| [Elektronische Dobbelsteen](555-en-4017/dobbelsteen/) | Dobbelsteen met balschakelaar |
 
 Meer info over de hele serie: [555-timer en 4017](555-en-4017/)
 

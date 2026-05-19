@@ -23,7 +23,7 @@ De 4017 heeft 10 uitgangen (Q0–Q9). Bij iedere puls van de 555 stapt hij één
 | [LED Fading](fading/) | NE555, BC547 | LED die langzaam aan en uit ademhaalt |
 | [Knight Rider](knightrider/) | NE555, CD4017 | 5 LEDs die heen en weer lopen |
 | [Politielicht](politielicht/) | NE555, CD4017, 2× BC547 | Rood/blauw zwaailicht |
-| [Elektronische Dobbelsteen](dobbelsteen/) | LM555, CD4017, transistoren | Dobbelsteen met drukknop |
+| [Elektronische Dobbelsteen](dobbelsteen/) | LM555, CD4017, transistoren | Dobbelsteen met balschakelaar |
 
 ## Voeding
 
