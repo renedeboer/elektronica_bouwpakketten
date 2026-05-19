@@ -4,6 +4,13 @@
 
 Een compacte real-time clock module op basis van de DS1307, met I2C interface en bijbehorende Arduino library.
 
+## Varianten
+
+| | | | |
+|---|---|---|---|
+| ![DS1307 voorkant](../images/ds1307-a.jpg) | ![DS1307 achterkant](../images/ds1307-b.jpg) | ![DS1302 voorkant](../images/ds1302-a.jpg) | ![DS1307 IC](../images/ds1307-ic.jpg) |
+| *DS1307 — voorkant* | *DS1307 — achterkant* | *DS1302 — voorkant* | *DS1307 IC* |
+
 ## Beschrijving
 
 De RTC module houdt de tijd bij (uren, minuten, seconden, datum) onafhankelijk van de hoofdschakeling, gevoed door een CR2032 knoopcelbatterij. Communicatie verloopt via I2C, waardoor de module werkt met vrijwel elke microcontroller of computer met een I2C bus — waaronder Arduino, maar ook de [ZX Spectrum 48K](../zx-spectrum-i2c/) via de I2C uitbreidingskaart.
