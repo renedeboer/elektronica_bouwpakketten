@@ -1,0 +1,146 @@
+# === ZX SPECTRUM I2C OLED LIBRARY ===
+# === PCF8584 -> SSD1306 128x32, machine-code I2C sender ===
+# Compile: zmakebas -l -a @start -o i2cOled.tap i2cOled.txt
+#
+# Memory layout:
+#   CLEAR 64499  (RAMTOP)
+#   CADDR=64900  machine code (48 bytes)
+#   BADDR=64948  send buffer: [count] [byte0..byteN-1]  (max 130 bytes)
+#
+# SSD1306 I2C address 0x3C (write byte 0x78)
+# Buffer layout: [count, 0x00, cmd...] for commands
+#                [count, 0x40, data...] for display data
+#
+# Hardware: SSD1306 connects directly to SDA/SCL (no PCF8574T needed)
+#   Keep 1k pull-ups and 1nF cap on SCL from i2clib setup
+#   Note: most SSD1306 breakout boards have onboard 4k7 pull-ups
+#   Combined with 1k external they parallel to ~825R - fine at 90kHz
+#
+# Entry points:
+#   @initpcf   init PCF8584 at 90kHz (S2=0x1C=28)
+#   @initoled  SSD1306 power-on init sequence
+#   @clroled   clear all 8 pages (128x64 pixels)
+#   @setpos    set cursor: P=page(0-7), CL=pixel column(0-127)
+#   @wrtstr    write string A$ at cursor using ZX ROM font
+
+@start: CLEAR 64499
+GOSUB @loadmc
+GOSUB @initpcf
+GOSUB @initoled
+GOSUB @clroled
+LET P=0: LET CL=0: GOSUB @setpos
+LET A$="HELLO OLED": GOSUB @wrtstr
+STOP
+
+# --- load machine code ---
+@loadmc: LET CADDR=64900: LET BADDR=CADDR+48
+RESTORE @mcdata
+FOR J=0 TO 47
+READ MC
+POKE CADDR+J,MC
+NEXT J
+RETURN
+
+# --- machine code: 48 bytes ---
+# Identical to i2clib except byte offset 9: 0x4E(78) -> 0x78(120)
+# All other bytes unchanged: same SENDBUF/WAITPIN structure
+@mcdata: DATA 33,180,253,70,35,120,183,200,62,120,211,47,62,197,211,63
+DATA 205,165,253,126,211,47,35,205,165,253,16,247,62,195,211,63
+DATA 201,22,0,14,0,219,63,7,208,13,32,249,21,32,244,201
+
+# --- init PCF8584 at 90kHz ---
+@initpcf: LET S0=47: LET S1=63
+OUT S1,128: OUT S0,85: OUT S1,160: OUT S0,28
+PAUSE 25: OUT S1,193: PAUSE 25
+RETURN
+
+# --- init SSD1306 ---
+# Single command transaction: 0x00 control byte + 25 init commands
+@initoled: POKE BADDR,26: POKE BADDR+1,0
+POKE BADDR+2,174
+POKE BADDR+3,213: POKE BADDR+4,128
+POKE BADDR+5,168: POKE BADDR+6,31
+POKE BADDR+7,211: POKE BADDR+8,0
+POKE BADDR+9,64
+POKE BADDR+10,141: POKE BADDR+11,20
+POKE BADDR+12,32: POKE BADDR+13,0
+POKE BADDR+14,161
+POKE BADDR+15,200
+POKE BADDR+16,218: POKE BADDR+17,2
+POKE BADDR+18,129: POKE BADDR+19,207
+POKE BADDR+20,217: POKE BADDR+21,241
+POKE BADDR+22,219: POKE BADDR+23,64
+POKE BADDR+24,164
+POKE BADDR+25,166
+POKE BADDR+26,175
+RANDOMIZE USR CADDR
+RETURN
+# Init commands sent (offset from BADDR+2):
+#   174      0xAE  display off
+#   213,128  0xD5,0x80  clock divider / oscillator
+#   168,31   0xA8,0x1F  multiplex ratio (32 rows)
+#   211,0    0xD3,0x00  display offset = 0
+#   64       0x40  display start line = 0
+#   141,20   0x8D,0x14  charge pump enable
+#   32,0     0x20,0x00  horizontal addressing mode
+#   161      0xA1  segment re-map (col 127 = SEG0)
+#   200      0xC8  COM scan direction (flipped)
+#   218,2    0xDA,0x02  COM pins hardware config (sequential, for 128x32)
+#   129,207  0x81,0xCF  contrast
+#   217,241  0xD9,0xF1  pre-charge period
+#   219,64   0xDB,0x40  VCOMH deselect level
+#   164      0xA4  display from RAM
+#   166      0xA6  normal (not inverted)
+#   175      0xAF  display on
+
+# --- clear all 8 pages ---
+@clroled: FOR P=0 TO 3
+GOSUB @clrpage
+NEXT P
+RETURN
+
+# --- clear one page P: set address then send 128 zero bytes ---
+@clrpage: POKE BADDR,7: POKE BADDR+1,0
+POKE BADDR+2,34: POKE BADDR+3,P: POKE BADDR+4,P
+POKE BADDR+5,33: POKE BADDR+6,0: POKE BADDR+7,127
+RANDOMIZE USR CADDR
+POKE BADDR,129: POKE BADDR+1,64
+FOR K=2 TO 129: POKE BADDR+K,0: NEXT K
+RANDOMIZE USR CADDR
+RETURN
+
+# --- set cursor: P=page(0-7), CL=pixel column(0-127) ---
+# In horizontal addressing, column auto-increments after each data byte
+# Page is locked to P (end=P), so writing wraps within the same page
+# Characters are 8px wide: CL=0,8,16,...,120 for char positions 0-15
+@setpos: POKE BADDR,7: POKE BADDR+1,0
+POKE BADDR+2,34: POKE BADDR+3,P: POKE BADDR+4,P
+POKE BADDR+5,33: POKE BADDR+6,CL: POKE BADDR+7,127
+RANDOMIZE USR CADDR
+RETURN
+
+# --- write string A$ at current cursor position ---
+# Call @setpos first to position cursor
+# Each character is 8px wide; 16 characters fit per page
+@wrtstr: FOR J=1 TO LEN A$
+LET CH=CODE A$(J): GOSUB @wrtchar
+NEXT J
+RETURN
+
+# --- write one character CH (ASCII code) ---
+# ZX Spectrum ROM font: 15616 + (CH-32)*8
+#   8 bytes = 8 rows, MSB=leftmost pixel, bit0=rightmost pixel
+# SSD1306 column byte: bit0=top pixel, bit7=bottom pixel
+# Rotation: for each column X (0-7), extract pixel from each row Y (0-7)
+@wrtchar: LET F=15616+(CH-32)*8
+POKE BADDR,9: POKE BADDR+1,64
+FOR X=0 TO 7
+LET M=2^(7-X): LET N=M*2
+LET CB=0
+FOR Y=0 TO 7
+IF INT(PEEK(F+Y)/M)-2*INT(PEEK(F+Y)/N)=1 THEN LET CB=CB+2^Y
+NEXT Y
+POKE BADDR+2+X,CB
+NEXT X
+RANDOMIZE USR CADDR
+RETURN

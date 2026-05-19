@@ -114,6 +114,13 @@ copy_ibom     "$KICAD_DIR/P82B715P/bom/ibom.html" \
               "$REPO_DIR/arduino-i2c-shield/bom"
 
 echo ""
+echo "=== ZX Spectrum I2C ==="
+export_schema "$KICAD_DIR/zxi2c/zxi2c.kicad_sch" \
+              "$REPO_DIR/zx-spectrum-i2c/schema"
+copy_ibom     "$KICAD_DIR/zxi2c/bom/ibom.html" \
+              "$REPO_DIR/zx-spectrum-i2c/bom"
+
+echo ""
 echo "=== VFD Klok ==="
 export_schema "$KICAD_DIR/vfd/vfd.kicad_sch" \
               "$REPO_DIR/vfd-klok/schema"

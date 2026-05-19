@@ -1,0 +1,141 @@
+# === ZX SPECTRUM I2C LCD LIBRARY ===
+# === PCF8584 -> PCF8574T -> HD44780, machine-code I2C sender ===
+# Compile: zmakebas -l -a @start -o i2clib.tap i2clib.txt
+#
+# Memory layout (set by @loadmc):
+#   CLEAR 64499  (RAMTOP, protects code from BASIC)
+#   CADDR=64900  machine code (48 bytes)
+#   BADDR=64948  send buffer: [count] [byte0..byteN-1]
+#
+# Machine code polls PCF8584 PIN bit after each byte - no clock-stretch pauses
+# I2C device address hardcoded as 0x4E (PCF8574T write at 0x27)
+#
+# Entry points:
+#   @initpcf   init PCF8584 at 90kHz (S2=0x1C=28)
+#   @initlcd   LCD wake-up + 4-bit mode init
+#   @clrscr    clear screen
+#   @blon      backlight on
+#   @bloff     backlight off
+#   @curon     cursor on (no blink)
+#   @curoff    cursor off
+#   @curblink  cursor blink on
+#   @setpos    set cursor (R=row 0/1, C=col 0-15)
+#   @wrtstr    write string A$ (uses loop var J)
+
+# CLEAR first: resets GOSUB stack, variables, RAMTOP
+@start: CLEAR 64499
+GOSUB @loadmc
+GOSUB @initpcf
+GOSUB @initlcd
+LET R=0: LET C=0: GOSUB @setpos
+LET A$="HELLO SPECTRUM": GOSUB @wrtstr
+LET R=1: LET C=0: GOSUB @setpos
+LET A$="I2C LIB READY!": GOSUB @wrtstr
+STOP
+
+# --- load machine code into RAM above RAMTOP ---
+@loadmc: LET CADDR=64900: LET BADDR=CADDR+48
+RESTORE @mcdata
+FOR J=0 TO 47
+READ MC
+POKE CADDR+J,MC
+NEXT J
+RETURN
+
+# --- machine code: 48 bytes at CADDR=64900 ---
+# CADDR=64900 (0xFD84)  BADDR=64948 (0xFDB4 lo=180 hi=253)
+# WAITPIN=64933 (0xFDA5 lo=165 hi=253)
+#
+# Correct PCF8584 transmitter protocol (per 8080 reference code):
+#   S0 write ALONE triggers each data byte (PIN->1 auto) - NO S1 write for data!
+#   S1 written only for START (0xC5) and STOP (0xC3).
+#   After last byte PIN=0: write STOP to S1, no poll needed.
+#
+# off 00: SENDBUF  LD HL,BADDR / LD B,(HL) / INC HL / LD A,B / OR A / RET Z
+# off 08:          LD A,0x4E / OUT(S0),A / LD A,0xC5(START) / OUT(S1),A / CALL WAITPIN
+# off 19: SENDLOOP LD A,(HL) / OUT(S0),A (PIN->1, auto-tx!) / INC HL / CALL WAITPIN
+# off 26:          DJNZ -9(SENDLOOP) / LD A,0xC3(STOP) / OUT(S1),A / RET
+# off 33: WAITPIN  LD D,0 / LD C,0 / IN A,(S1) / RLCA / RET NC (PIN=0=done)
+#                  DEC C / JR NZ,-7(IN) / DEC D / JR NZ,-12(LD C,0) / RET (timeout ~0.7s)
+#                  Uses D,C,A only - B preserved (B is SENDBUF loop counter)
+@mcdata: DATA 33,180,253,70,35,120,183,200,62,78,211,47,62,197,211,63
+DATA 205,165,253,126,211,47,35,205,165,253,16,247,62,195,211,63
+DATA 201,22,0,14,0,219,63,7,208,13,32,249,21,32,244,201
+
+# --- init PCF8584 at 90kHz ---
+@initpcf: LET S0=47: LET S1=63
+LET LADR=78: LET BL=8: LET DC=14
+OUT S1,128: OUT S0,85: OUT S1,160: OUT S0,28
+PAUSE 25: OUT S1,193: PAUSE 25
+RETURN
+
+# --- init LCD: 4 wake-up nibbles + 4-bit commands ---
+# Nibbles sent as separate clean transactions (better than one stretched transaction)
+# N3 = data byte for nibble 0x30 (with BL, E=0)
+# N2 = data byte for nibble 0x20 (with BL, E=0)
+@initlcd: PAUSE 1
+LET N3=48+BL: LET N2=32+BL
+POKE BADDR,3: POKE BADDR+1,N3: POKE BADDR+2,N3+4: POKE BADDR+3,N3
+# nibble 0x30 #1 - LCD needs >4.1ms after
+RANDOMIZE USR CADDR: PAUSE 1
+# nibble 0x30 #2 - LCD needs >100us after (BASIC overhead sufficient)
+RANDOMIZE USR CADDR
+# nibble 0x30 #3
+RANDOMIZE USR CADDR
+POKE BADDR+1,N2: POKE BADDR+2,N2+4: POKE BADDR+3,N2
+# nibble 0x20 - switches LCD to 4-bit mode
+RANDOMIZE USR CADDR
+# &28 function set 4-bit 2-line
+LET RS=0: LET CMD=40: GOSUB @sendcmd
+# &08 display off
+LET CMD=8: GOSUB @sendcmd
+# &01 clear (slow, needs 1.52ms)
+LET CMD=1: GOSUB @sendcmd: PAUSE 1
+# &06 entry mode
+LET CMD=6: GOSUB @sendcmd
+# &0E display on + cursor
+LET CMD=DC: GOSUB @sendcmd
+RETURN
+
+# --- clear screen ---
+@clrscr: LET RS=0: LET CMD=1: GOSUB @sendcmd: PAUSE 1
+RETURN
+
+# --- backlight on / off ---
+@blon: LET BL=8: RETURN
+@bloff: LET BL=0: RETURN
+
+# --- cursor control (updates DC state) ---
+@curon: LET DC=14
+LET RS=0: LET CMD=DC: GOSUB @sendcmd
+RETURN
+@curoff: LET DC=12
+LET RS=0: LET CMD=DC: GOSUB @sendcmd
+RETURN
+@curblink: LET DC=15
+LET RS=0: LET CMD=DC: GOSUB @sendcmd
+RETURN
+
+# --- set cursor: R=row (0/1), C=col (0-15) ---
+@setpos: LET RS=0: LET CMD=128+(64*R)+C
+GOSUB @sendcmd
+RETURN
+
+# --- write string A$ (uses loop var J) ---
+@wrtstr: LET RS=1
+FOR J=1 TO LEN A$
+LET CMD=CODE A$(J): GOSUB @sendcmd
+NEXT J
+RETURN
+
+# --- send LCD byte via machine code ---
+# CMD = byte value, RS = 0 (command) or 1 (data)
+# Pokes 6 bytes into buffer (upper nibble E-pulse + lower nibble E-pulse)
+# Machine code sends as one transaction: S+Addr / byte×6 (S0-only) / STOP
+@sendcmd: LET NU=INT(CMD/16): LET NL=CMD-NU*16
+LET UB=(NU*16)+BL+RS: LET LB=(NL*16)+BL+RS
+POKE BADDR,6
+POKE BADDR+1,UB: POKE BADDR+2,UB+4: POKE BADDR+3,UB
+POKE BADDR+4,LB: POKE BADDR+5,LB+4: POKE BADDR+6,LB
+RANDOMIZE USR CADDR
+RETURN

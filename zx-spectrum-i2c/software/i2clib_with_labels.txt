@@ -1,0 +1,91 @@
+# === ZX SPECTRUM I2C LCD LIBRARY ===
+# === PCF8584 -> PCF8574T -> HD44780 16x2 ===
+# Compile: zmakebas -l -a @demo -o i2clib.tap i2clib.txt
+#
+# Entry points (use GOSUB @label in your program):
+#   @initpcf   - init PCF8584 at 1.5kHz (sets S0 S1 LADR BL DC)
+#   @initlcd   - init LCD: wake-up + 4-bit mode commands
+#   @clrscr    - clear screen
+#   @blon      - backlight on
+#   @bloff     - backlight off
+#   @curon     - cursor on (no blink)
+#   @curoff    - cursor off
+#   @curblink  - cursor + blink on
+#   @setpos    - set cursor (R=row 0/1, C=col 0-15)
+#   @wrtstr    - write string A$ (uses loop var J)
+
+# --- demo ---
+@demo: GOSUB @initpcf
+GOSUB @initlcd
+LET R=0: LET C=0: GOSUB @setpos
+LET A$="HELLO SPECTRUM": GOSUB @wrtstr
+LET R=1: LET C=0: GOSUB @setpos
+LET A$="I2C LIB READY!": GOSUB @wrtstr
+STOP
+
+# --- init PCF8584: 1.5kHz ---
+@initpcf: LET S0=47: LET S1=63
+LET LADR=78: LET BL=8: LET DC=14
+OUT S1,128: OUT S0,85: OUT S1,160: OUT S0,31
+PAUSE 25: OUT S1,193: PAUSE 25
+RETURN
+
+# --- init LCD: wake-up sequence + 4-bit init commands ---
+# wake-up: 3x nibble &30 + nibble &20, all in ONE I2C transaction
+@initlcd: PAUSE 100
+OUT S0,LADR: OUT S1,197: PAUSE 1
+OUT S0,48: OUT S1,193: PAUSE 1: OUT S0,52: OUT S1,193: PAUSE 1: OUT S0,48: OUT S1,193: PAUSE 10
+OUT S0,48: OUT S1,193: PAUSE 1: OUT S0,52: OUT S1,193: PAUSE 1: OUT S0,48: OUT S1,193: PAUSE 5
+OUT S0,48: OUT S1,193: PAUSE 1: OUT S0,52: OUT S1,193: PAUSE 1: OUT S0,48: OUT S1,193: PAUSE 5
+OUT S0,32: OUT S1,193: PAUSE 1: OUT S0,36: OUT S1,193: PAUSE 1: OUT S0,32: OUT S1,195: PAUSE 5
+# &28 function set, &08 off, &01 clear, &06 entry, DC on
+LET RS=0: LET CMD=40: GOSUB @sendbyte: PAUSE 2
+LET CMD=8: GOSUB @sendbyte: PAUSE 2
+LET CMD=1: GOSUB @sendbyte: PAUSE 5
+LET CMD=6: GOSUB @sendbyte: PAUSE 2
+LET CMD=DC: GOSUB @sendbyte: PAUSE 2
+RETURN
+
+# --- clear screen (&01 with extra delay) ---
+@clrscr: LET RS=0: LET CMD=1: GOSUB @sendbyte: PAUSE 5
+RETURN
+
+# --- backlight ---
+@blon: LET BL=8: RETURN
+@bloff: LET BL=0: RETURN
+
+# --- cursor control (also updates DC state) ---
+@curon: LET DC=14
+LET RS=0: LET CMD=DC: GOSUB @sendbyte: PAUSE 2
+RETURN
+@curoff: LET DC=12
+LET RS=0: LET CMD=DC: GOSUB @sendbyte: PAUSE 2
+RETURN
+@curblink: LET DC=15
+LET RS=0: LET CMD=DC: GOSUB @sendbyte: PAUSE 2
+RETURN
+
+# --- set cursor position: R=row (0/1), C=col (0-15) ---
+@setpos: LET RS=0: LET CMD=128+(64*R)+C
+GOSUB @sendbyte: PAUSE 2
+RETURN
+
+# --- write string A$ to LCD (uses loop var J) ---
+@wrtstr: LET RS=1
+FOR J=1 TO LEN A$
+LET CMD=CODE A$(J): GOSUB @sendbyte: PAUSE 1
+NEXT J
+RETURN
+
+# --- low-level: send CMD with RS in one I2C transaction ---
+# CRITICAL: all 6 bytes in single START-to-STOP (S1=193=continue, S1=195=stop)
+@sendbyte: LET NU=INT(CMD/16): LET NL=CMD-NU*16
+LET UB=(NU*16)+BL+RS: LET LB=(NL*16)+BL+RS
+OUT S0,LADR: OUT S1,197: PAUSE 1
+OUT S0,UB: OUT S1,193: PAUSE 1
+LET NB=UB+4: OUT S0,NB: OUT S1,193: PAUSE 1
+OUT S0,UB: OUT S1,193: PAUSE 1
+OUT S0,LB: OUT S1,193: PAUSE 1
+LET NB=LB+4: OUT S0,NB: OUT S1,193: PAUSE 1
+OUT S0,LB: OUT S1,195: PAUSE 1
+RETURN
