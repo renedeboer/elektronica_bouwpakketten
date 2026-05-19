@@ -40,19 +40,29 @@ De ATtiny85 wordt geprogrammeerd via ISP met een Arduino als programmer:
 | [ACFS4 — Kat op de Maan](acfs4-maan/) | Kat op de maan | 14 |
 | [ACFS5 — Kat bij Saturnus](acfs5-saturnus/) | Kat bij de planeet Saturnus | 14 |
 
-## Stuklijst (geldt voor alle 5 varianten)
+## Stuklijst
 
-| Aanduiding | Waarde / Type | Aantal | Opmerking |
-|------------|--------------|--------|-----------|
-| U1 | ATtiny85-20P | 1 | DIP-8, in socket gemonteerd |
-| BT1 | CR2032 batterijhouder | 1 | SMD, Renata SMTU2032-LF |
-| C1 | 100nF | 1 | SMD 0805 |
-| D1–D8 | LED | 8 | SMD, kleur naar keuze |
-| D9–D14 | Bidirectionele LED | 6 | Through-hole, dual kleur |
-| R1–R5 | 100Ω–680Ω* | 5 | MiniMELF (MMA-0204) |
-| SW1 | DIP-schakelaar 1-polig | 1 | JS202011SCQN |
+### Gemeenschappelijk (alle 5 varianten)
 
-> *De exacte weerstandswaarden zijn afhankelijk van de LED kleur en het gewenste effect. Zie de stuklijst per variant.
+| Aanduiding | Waarde / Type | Aantal |
+|------------|--------------|--------|
+| U1 | ATtiny85-20P (DIP-8) | 1 |
+| BT1, BT2 | AA of AAA batterijhouder | 2 |
+| C1 | 100nF | 1 |
+| R1–R5 | 100Ω–680Ω* | 5 |
+| SW1 | DIP-schakelaar 1-polig | 1 |
+
+> *De exacte weerstandswaarden zijn afhankelijk van de LED-kleur en het gewenste effect. Zie de stuklijst per variant.
+
+### LED's per variant
+
+| Variant | Gewone LED 3mm | Bidirectionele LED 3mm | Bidirectionele LED 5mm |
+|---------|---------------|------------------------|------------------------|
+| ACFS1 — UFO | D1–D8 (8×) | D9, D12–D14 (4×) | — |
+| ACFS2 — Raket | D1–D20 (20×) | — | — |
+| ACFS3 — Ruimtepak | — | D12–D18 (7×) | D9 (1×) |
+| ACFS4 — Maan | D1–D8 (8×) | D12–D14 (3×) | D9 (1×) |
+| ACFS5 — Saturnus | D1–D8 (8×) | D12–D14 (3×) | D9 (1×) |
 
 ## Bouwinstructies
 
@@ -60,12 +70,12 @@ Zie [Soldeertips en techniek](../docs/solderen.md) voor algemene soldeerinformat
 
 ### Volgorde van montage
 
-1. SMD condensator C1 (100nF, 0805)
-2. SMD weerstanden R1–R5 (MiniMELF)
-3. SMD LED's D1–D8 — **let op polariteit en richting op de silkscreen**
-4. DIP-8 socket voor U1
-5. Bidirectionele LED's D9–D14 — hoogte bepaalt het uiterlijk, pas aan naar smaak
-6. DIP-schakelaar SW1
-7. CR2032 batterijhouder BT1
+1. Condensator C1 (100nF)
+2. Weerstanden R1–R5
+3. DIP-8 socket voor U1
+4. DIP-schakelaar SW1
+5. Gewone LED's (3mm) — **let op polariteit**
+6. Bidirectionele LED's (3mm en 5mm) — hoogte bepaalt het uiterlijk, pas aan naar smaak
+7. Batterijhouders BT1 en BT2
 8. ATtiny85 in de socket plaatsen (inkeping op chip = inkeping op socket)
-9. Batterij plaatsen
+9. Batterijen plaatsen
