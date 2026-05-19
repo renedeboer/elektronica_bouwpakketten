@@ -54,6 +54,17 @@ Meer info over de hele serie: [555-timer en 4017](555-en-4017/)
 
 ---
 
+### Modules en bibliotheken
+
+Eigen producten met een eigen GitHub repository. De broncode en updates staan daar; onderstaande pagina's geven een overzicht.
+
+| Module | Beschrijving |
+|--------|-------------|
+| [Vleermuis](vleermuis/) | ATtiny85 LED-bouwpakket, basis voor de Angry Cats From Space serie — [github.com/renedeboer/ReneDeBoer_Vleermuis](https://github.com/renedeboer/ReneDeBoer_Vleermuis) |
+| [RTC Module](rtc/) | DS1307 real-time clock module met Arduino library, werkt met elke I2C master — [github.com/renedeboer/ReneDeBoer_RTC](https://github.com/renedeboer/ReneDeBoer_RTC) |
+
+---
+
 ## Algemene informatie
 
 - [Soldeertips en techniek](docs/solderen.md)
