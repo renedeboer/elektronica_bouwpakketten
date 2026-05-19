@@ -16,7 +16,7 @@ De ZX Spectrum heeft van huis uit geen I2C bus. Deze uitbreidingskaart voegt I2C
 - **HDSP-4850** 10-segment bargraph LED met drie functies:
   - 8 segmenten tonen de toestand van de PCF8574 uitgangen (laag = LED aan)
   - 1 segment als voedings-indicator (power LED)
-  - 1 segment verbonden met de RTC CLK uitgang — knippert op 1Hz als de [RTC module](https://github.com/renedeboer/ReneDeBoer_RTC) aangesloten is
+  - 1 segment verbonden met de RTC CLK uitgang — knippert op 1Hz als de [RTC module](https://github.com/renedeboer/ReneDeBoer_RTC) aangesloten is (de RTC module werkt met elke I2C master, ook de ZX Spectrum)
 - **Kempston-compatibele joystick interface** (DB9) — gecombineerd op deze kaart zodat I2C en joystick gelijktijdig werken
 - Adresbepaling via **74LS138** decoder
 - Busbuffering via **74LS240** en **4049**
