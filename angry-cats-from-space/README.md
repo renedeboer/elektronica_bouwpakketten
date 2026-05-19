@@ -11,7 +11,7 @@ Alle vijf bouwpakketten zijn gebaseerd op dezelfde elektronica:
 - **ATtiny85** microcontroller — het brein van de kit
 - **Charlieplexing** — techniek om veel LEDs aan te sturen met slechts 5 pinnen
 - **2× AA of AAA batterijen** — via batterijhouder op de PCB
-- **DIP-schakelaar** — voor het aanpassen van het gedrag (in ontwikkeling)
+- **DIP-schakelaar** — aan/uit schakelaar
 
 De ATtiny85 stuurt de LEDs aan via een mood-systeem: het apparaatje gedraagt zich rustig, speels of eng, en wisselt daar willekeurig tussen. De LED-effecten zijn afgeleid van het [Vleermuis bouwpakket](https://github.com/renedeboer/ReneDeBoer_Vleermuis).
 
