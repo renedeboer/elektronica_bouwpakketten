@@ -4,10 +4,7 @@
 
 Een decoratief LED-bouwpakket in de vorm van een vleermuis, aangestuurd door een ATtiny85 via charlieplexing.
 
-| | |
-|---|---|
-| ![Vleermuis artwork](fotos/vleermuis_artwork.png) | ![Vleermuis PCB bestukt](fotos/vleermuis_pcb_bestukt.jpg) |
-| *Artwork* | *Bestukt prototype* |
+![Vleermuis PCB bestukt](fotos/vleermuis_pcb_bestukt.jpg)
 
 ## Beschrijving
 
