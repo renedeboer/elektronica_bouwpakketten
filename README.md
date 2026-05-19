@@ -18,11 +18,11 @@ Vijf verschillende PCB's met een kat in de ruimte als thema. Allen aangestuurd d
 
 | Kit | Thema | LEDs |
 |-----|-------|------|
-| [ACFS1 — Kat in UFO](angry-cats-from-space/acfs1-ufo/) | Kat in een vliegende schotel | 14 |
-| [ACFS2 — Kat met Raket](angry-cats-from-space/acfs2-raket/) | Kat op een raket | 25 |
-| [ACFS3 — Kat in Ruimtepak](angry-cats-from-space/acfs3-ruimtepak/) | Kat in ruimtepak | 14 |
-| [ACFS4 — Kat op de Maan](angry-cats-from-space/acfs4-maan/) | Kat op de maan | 14 |
-| [ACFS5 — Kat bij Saturnus](angry-cats-from-space/acfs5-saturnus/) | Kat bij de planeet Saturnus | 14 |
+| [ACFS1 — Kat in UFO](angry-cats-from-space/acfs1-ufo/) | Kat in een vliegende schotel | 12 |
+| [ACFS2 — Kat met Raket](angry-cats-from-space/acfs2-raket/) | Kat op een raket | 20 |
+| [ACFS3 — Kat in Ruimtepak](angry-cats-from-space/acfs3-ruimtepak/) | Kat in ruimtepak | 8 |
+| [ACFS4 — Kat op de Maan](angry-cats-from-space/acfs4-maan/) | Kat op de maan | 12 |
+| [ACFS5 — Kat bij Saturnus](angry-cats-from-space/acfs5-saturnus/) | Kat bij de planeet Saturnus | 12 |
 
 Meer info over de hele serie: [Angry Cats From Space](angry-cats-from-space/)
 
