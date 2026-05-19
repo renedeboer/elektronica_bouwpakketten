@@ -13,8 +13,11 @@ De ZX Spectrum heeft van huis uit geen I2C bus. Deze uitbreidingskaart voegt I2C
 - I2C bus via **PCF8584** controller (eigen klokgenerator, onafhankelijk van de Z80)
 - 8-bit I/O expander via **PCF8574P**
 - Aansluiting voor **0,91" OLED display** (I2C, rechtstreeks op de kaart)
-- Aansluiting voor **HDSP-4850** 4-karakter alfanumeriek LED display
-- **Kempston-compatibele joystick interface** (DB9)
+- **HDSP-4850** 10-segment bargraph LED met drie functies:
+  - 8 segmenten tonen de toestand van de PCF8574 uitgangen (laag = LED aan)
+  - 1 segment als voedings-indicator (power LED)
+  - 1 segment verbonden met de RTC CLK uitgang — knippert op 1Hz als de [RTC module](https://github.com/renedeboer/ReneDeBoer_RTC) aangesloten is
+- **Kempston-compatibele joystick interface** (DB9) — gecombineerd op deze kaart zodat I2C en joystick gelijktijdig werken
 - Adresbepaling via **74LS138** decoder
 - Busbuffering via **74LS240** en **4049**
 - DIP-schakelaar voor I2C adresselectie
@@ -58,7 +61,7 @@ De werkingsfoto's zijn gemaakt met het prototype op gaatjesprint — de PCB werk
 | Y1 | Kristal (voor PCF8584 klok) | 1 |
 | J1 | ZX Spectrum 48K edge connector | 1 |
 | J2 | OLED display connector (I2C) | 1 |
-| J3 | HDSP-4850 display connector | 1 |
+| BAR1 | HDSP-4850 10-segment bargraph LED (groen) | 1 |
 | J4 | DB9 joystick connector (Kempston) | 1 |
 | J5 | Uitbreidingsconnector | 1 |
 | SW1 | DIP-schakelaar 2-polig (adresselectie) | 1 |
