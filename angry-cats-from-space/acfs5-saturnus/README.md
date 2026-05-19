@@ -18,12 +18,12 @@ De PCB toont een kat naast de planeet Saturnus met zijn kenmerkende ringen. De L
 | Aanduiding | Waarde / Type | Aantal |
 |------------|--------------|--------|
 | U1 | ATtiny85-20P | 1 |
-| BT1 | CR2032 batterijhouder (SMTU2032-LF) | 1 |
-| C1 | 100nF (0805 SMD) | 1 |
-| D1–D8 | LED SMD | 8 |
-| D10–D14 | Bidirectionele LED 3mm (through-hole) | 5 |
-| D9 | Bidirectionele LED 5mm (through-hole) | 1 |
-| R1–R5 | 100Ω–680Ω (MiniMELF MMA-0204) | 5 |
+| BT1, BT2 | AA of AAA batterijhouder | 2 |
+| C1 | 100nF | 1 |
+| D1–D8 | LED 3mm | 8 |
+| D12–D14 | Bidirectionele LED 3mm | 3 |
+| D9 | Bidirectionele LED 5mm | 1 |
+| R1–R5 | 100Ω–680Ω* | 5 |
 | SW1 | DIP-schakelaar 1-polig | 1 |
 
 ## Bouwinstructies
