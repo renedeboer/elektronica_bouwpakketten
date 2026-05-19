@@ -1,6 +1,6 @@
 <img src="../../images/logo.svg" align="right" width="72">
 
-# ACFS2 — Kat met Raket
+# ACFS2 — Kat in een Raket
 
 Een kat die in een raket vliegt, met 20 animerende LEDs aangestuurd door een ATtiny85.
 

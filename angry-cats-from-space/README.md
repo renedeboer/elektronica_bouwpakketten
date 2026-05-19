@@ -35,7 +35,7 @@ De ATtiny85 wordt geprogrammeerd via ISP met een Arduino als programmer:
 | Kit | Thema | LEDs |
 |-----|-------|------|
 | [ACFS1 — Kat in UFO](acfs1-ufo/) | Kat in een vliegende schotel | 14 |
-| [ACFS2 — Kat met Raket](acfs2-raket/) | Kat in een raket | 20 |
+| [ACFS2 — Kat in een Raket](acfs2-raket/) | Kat in een raket | 20 |
 | [ACFS3 — Kat in Ruimtepak](acfs3-ruimtepak/) | Kat in ruimtepak | 8 |
 | [ACFS4 — Kat op de Maan](acfs4-maan/) | Kat op de maan | 12 |
 | [ACFS5 — Kat op Saturnus](acfs5-saturnus/) | Kat op de planeet Saturnus | 12 |
