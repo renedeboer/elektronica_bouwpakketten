@@ -2,8 +2,10 @@
 
 Vijf LED's die heen en weer lopen, geïnspireerd door de iconische verlichting van KITT uit Knight Rider.
 
-<!-- foto: afgewerkt prototype (LEDs aan, beweging zichtbaar) -->
-<!-- foto: naakte PCB bovenkant -->
+| | |
+|---|---|
+| ![Lege PCB](fotos/knightrider_pcb_leeg.jpg) | ![Bestukte PCB](fotos/knightrider_pcb_bestukt.jpg) |
+| *Lege PCB* | *Bestukt prototype* |
 
 ## Beschrijving
 

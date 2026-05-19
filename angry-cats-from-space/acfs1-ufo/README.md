@@ -2,8 +2,10 @@
 
 Een kat in een vliegende schotel met animerende LEDs, aangestuurd door een ATtiny85.
 
-<!-- foto: afgewerkt prototype voorkant (LEDs aan) -->
-<!-- foto: naakte PCB bovenkant -->
+![acfs1-ufo artwork](fotos/acfs1-ufo_artwork.png)
+
+![acfs1-ufo PCB](fotos/acfs1-ufo_pcb_leeg.jpg)
+
 
 ## Beschrijving
 

@@ -2,8 +2,10 @@
 
 Een elektronische dobbelsteen met 7 LED's in dobbelsteenpatroon, aangestuurd door een LM555 en CD4017. Druk op de knop, laat los en de uitkomst verschijnt.
 
-<!-- foto: afgewerkt prototype (een waarde getoond) -->
-<!-- foto: naakte PCB bovenkant -->
+| | |
+|---|---|
+| ![Lege PCB](fotos/dobbelsteen_pcb_leeg.jpg) | ![Bestukte PCB](fotos/dobbelsteen_pcb_bestukt.jpg) |
+| *Lege PCB — ronde "Roll the Dice" vormfactor* | *Bestukt prototype* |
 
 ## Beschrijving
 

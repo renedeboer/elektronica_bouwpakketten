@@ -2,8 +2,10 @@
 
 Een afwisselend rood/blauw zwaailicht effect met 12 LED's, twee transistoren en een 4017 counter.
 
-<!-- foto: afgewerkt prototype (LEDs aan, rood/blauw zichtbaar) -->
-<!-- foto: naakte PCB bovenkant -->
+| | |
+|---|---|
+| ![Lege PCB](fotos/politielicht_pcb_leeg.jpg) | ![Bestukte PCB](fotos/politielicht_pcb_bestukt.jpg) |
+| *Lege PCB* | *Bestukt prototype* |
 
 ## Beschrijving
 

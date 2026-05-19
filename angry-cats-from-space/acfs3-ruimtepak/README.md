@@ -2,8 +2,10 @@
 
 Een kat in een ruimtepak, met animerende LEDs aangestuurd door een ATtiny85.
 
-<!-- foto: afgewerkt prototype voorkant (LEDs aan) -->
-<!-- foto: naakte PCB bovenkant -->
+![acfs3-ruimtepak artwork](fotos/acfs3-ruimtepak_artwork.png)
+
+![acfs3-ruimtepak PCB](fotos/acfs3-ruimtepak_pcb_leeg.jpg)
+
 
 ## Beschrijving
 

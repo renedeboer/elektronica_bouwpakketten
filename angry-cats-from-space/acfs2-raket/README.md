@@ -2,8 +2,10 @@
 
 Een kat die op een raket vliegt, met 25 animerende LEDs aangestuurd door een ATtiny85.
 
-<!-- foto: afgewerkt prototype voorkant (LEDs aan) -->
-<!-- foto: naakte PCB bovenkant -->
+![acfs2-raket artwork](fotos/acfs2-raket_artwork.png)
+
+![acfs2-raket PCB](fotos/acfs2-raket_pcb_leeg.jpg)
+
 
 ## Beschrijving
 

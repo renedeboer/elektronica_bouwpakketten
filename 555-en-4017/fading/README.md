@@ -2,8 +2,10 @@
 
 Een LED die langzaam en vloeiend aan en uit ademhaalt, alsof hij leeft.
 
-<!-- foto: afgewerkt prototype (LED aan, zichtbaar effect) -->
-<!-- foto: naakte PCB bovenkant -->
+| | |
+|---|---|
+| ![Lege PCB](fotos/fading_pcb_leeg.jpg) | ![Bestukte PCB](fotos/fading_pcb_bestukt.jpg) |
+| *Lege PCB* | *Bestukt prototype* |
 
 ## Beschrijving
 

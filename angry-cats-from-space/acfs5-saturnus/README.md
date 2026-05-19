@@ -2,8 +2,10 @@
 
 Een kat naast de planeet Saturnus, met animerende LEDs aangestuurd door een ATtiny85.
 
-<!-- foto: afgewerkt prototype voorkant (LEDs aan) -->
-<!-- foto: naakte PCB bovenkant -->
+![acfs5-saturnus artwork](fotos/acfs5-saturnus_artwork.png)
+
+![acfs5-saturnus PCB](fotos/acfs5-saturnus_pcb_leeg.jpg)
+
 
 ## Beschrijving
 
