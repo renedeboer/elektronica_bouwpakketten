@@ -1,8 +1,8 @@
 <img src="../../images/logo.svg" align="right" width="72">
 
-# ACFS5 — Kat bij Saturnus
+# ACFS5 — Kat op Saturnus
 
-Een kat naast de planeet Saturnus, met animerende LEDs aangestuurd door een ATtiny85.
+Een kat op de planeet Saturnus, met animerende LEDs aangestuurd door een ATtiny85.
 
 | | |
 |---|---|
@@ -12,7 +12,7 @@ Een kat naast de planeet Saturnus, met animerende LEDs aangestuurd door een ATti
 
 ## Beschrijving
 
-De PCB toont een kat naast de planeet Saturnus met zijn kenmerkende ringen. De LEDs verlichten zowel de ringen als de kat zelf.
+De PCB toont een kat op de planeet Saturnus met zijn kenmerkende ringen. De LEDs verlichten zowel de ringen als de kat zelf.
 
 ## Stuklijst
 
@@ -47,6 +47,6 @@ Firmware in ontwikkeling — zie [seriepagina](../README.md).
 
 **Belangrijke milieu-informatie betreffende dit product**
 
-Dit symbool op het toestel of de verpakking geeft aan dat, als het na zijn levenscyclus wordt weggeworpen, dit toestel schade kan toebrengen aan het milieu. Gooi dit toestel (en eventuele batterijen) niet bij het gewone huishoudelijke afval; het moet bij een gespecialiseerd bedrijf terechtkomen voor recyclage. U dient dit toestel naar uw verdeler of naar een lokaal recyclagepunt te brengen. Respecteer de plaatselijke milieuwetgeving. Heeft u vragen, contacteer dan de plaatselijke autoriteiten inzake afvalverwijdering.
+Dit symbool op het toestel of de verpakking geeft aan dat dit product aan het einde van zijn levensduur niet bij het gewone huishoudelijk afval mag worden weggegooid. Gooi dit product (inclusief eventuele batterijen) niet bij het huisvuil — breng het naar een erkend inzamelpunt of retourpunt voor recycling. Neem voor meer informatie contact op met uw gemeente of lokale milieuinstantie.
 
-Producten mogen altijd worden teruggebracht of opgestuurd via de webshop op [rene-de-boer.nl](https://rene-de-boer.nl).
+Producten mogen voor recycling altijd worden teruggebracht of opgestuurd via de webshop op [rene-de-boer.nl](https://rene-de-boer.nl).

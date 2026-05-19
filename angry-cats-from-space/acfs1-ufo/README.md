@@ -2,7 +2,7 @@
 
 # ACFS1 — Kat in UFO
 
-Een kat in een vliegende schotel met 12 animerende LEDs, aangestuurd door een ATtiny85.
+Een kat in een vliegende schotel met 14 animerende LEDs, aangestuurd door een ATtiny85.
 
 | | |
 |---|---|
@@ -12,7 +12,7 @@ Een kat in een vliegende schotel met 12 animerende LEDs, aangestuurd door een AT
 
 ## Beschrijving
 
-De PCB heeft de vorm van een UFO met een kat erin. De LED's vormen de verlichting van de vliegende schotel; de bidirectionele LED's zorgen voor een kleurwisselend effect. De ATtiny85 stuurt alle 12 LED's via charlieplexing aan met een mood-gebaseerde animatie.
+De PCB heeft de vorm van een UFO met een kat erin. De LED's vormen de verlichting van de vliegende schotel; de bidirectionele LED's zorgen voor een kleurwisselend effect. De ATtiny85 stuurt alle 14 LED's via charlieplexing aan met een mood-gebaseerde animatie.
 
 ## Stuklijst
 
@@ -22,7 +22,7 @@ De PCB heeft de vorm van een UFO met een kat erin. De LED's vormen de verlichtin
 | BT1, BT2 | AA of AAA batterijhouder | 2 |
 | C1 | 100nF | 1 |
 | D1–D8 | LED 3mm | 8 |
-| D9, D12–D14 | Bidirectionele LED 3mm | 4 |
+| D9–D14 | Bidirectionele LED 3mm | 6 |
 | R1–R5 | 100Ω–680Ω* | 5 |
 | SW1 | DIP-schakelaar 1-polig | 1 |
 
@@ -33,7 +33,7 @@ Zie de [seriepagina](../README.md) voor de algemene volgorde van montage en de [
 ### Specifieke aandachtspunten
 
 - De LED's D1–D8 zitten aan de voorkant van de PCB. Let op de polariteit (richtingsmarkering op de silkscreen).
-- De bidirectionele LED's D9, D12–D14 (dual-kleur) bepalen het kleureffect. Welke kleur brandt hangt af van de stroomrichting; dit wisselt de software automatisch af.
+- De bidirectionele LED's D9–D14 (dual-kleur) bepalen het kleureffect. Welke kleur brandt hangt af van de stroomrichting; dit wisselt de software automatisch af.
 - Monteer de bidirectionele LED's op gelijke hoogte voor een mooi resultaat.
 - Let op de richtingsmarkering voor D1–D8 op de silkscreen.
 
@@ -55,6 +55,6 @@ Firmware in ontwikkeling — zie [seriepagina](../README.md) voor de huidige sta
 
 **Belangrijke milieu-informatie betreffende dit product**
 
-Dit symbool op het toestel of de verpakking geeft aan dat, als het na zijn levenscyclus wordt weggeworpen, dit toestel schade kan toebrengen aan het milieu. Gooi dit toestel (en eventuele batterijen) niet bij het gewone huishoudelijke afval; het moet bij een gespecialiseerd bedrijf terechtkomen voor recyclage. U dient dit toestel naar uw verdeler of naar een lokaal recyclagepunt te brengen. Respecteer de plaatselijke milieuwetgeving. Heeft u vragen, contacteer dan de plaatselijke autoriteiten inzake afvalverwijdering.
+Dit symbool op het toestel of de verpakking geeft aan dat dit product aan het einde van zijn levensduur niet bij het gewone huishoudelijk afval mag worden weggegooid. Gooi dit product (inclusief eventuele batterijen) niet bij het huisvuil — breng het naar een erkend inzamelpunt of retourpunt voor recycling. Neem voor meer informatie contact op met uw gemeente of lokale milieuinstantie.
 
-Producten mogen altijd worden teruggebracht of opgestuurd via de webshop op [rene-de-boer.nl](https://rene-de-boer.nl).
+Producten mogen voor recycling altijd worden teruggebracht of opgestuurd via de webshop op [rene-de-boer.nl](https://rene-de-boer.nl).

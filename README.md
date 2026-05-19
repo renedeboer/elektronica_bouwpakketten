@@ -4,6 +4,8 @@
 
 Een verzameling zelfbouw elektronica bouwpakketten, van eenvoudige 555-timer schakelingen tot een VFD klok met Arduino. Alle bouwpakketten zijn ontworpen in KiCad.
 
+Deze projecten zijn gemaakt om solderen en elektronica toegankelijk en leuk te maken — voor beginners die hun eerste LED-schakeling bouwen, en voor liefhebbers die iets eigens willen maken.
+
 ![Werkbank](images/werkbank.jpg)
 
 ## Bestellen
@@ -18,11 +20,11 @@ Vijf verschillende PCB's met een kat in de ruimte als thema. Allen aangestuurd d
 
 | Kit | Thema | LEDs | |
 |-----|-------|------|-|
-| [ACFS1 — Kat in UFO](angry-cats-from-space/acfs1-ufo/) | Kat in een vliegende schotel | 12 | <img src="angry-cats-from-space/acfs1-ufo/fotos/acfs1-ufo_artwork.png" width="80"> |
-| [ACFS2 — Kat met Raket](angry-cats-from-space/acfs2-raket/) | Kat op een raket | 20 | <img src="angry-cats-from-space/acfs2-raket/fotos/acfs2-raket_artwork.png" width="80"> |
+| [ACFS1 — Kat in UFO](angry-cats-from-space/acfs1-ufo/) | Kat in een vliegende schotel | 14 | <img src="angry-cats-from-space/acfs1-ufo/fotos/acfs1-ufo_artwork.png" width="80"> |
+| [ACFS2 — Kat met Raket](angry-cats-from-space/acfs2-raket/) | Kat in een raket | 20 | <img src="angry-cats-from-space/acfs2-raket/fotos/acfs2-raket_artwork.png" width="80"> |
 | [ACFS3 — Kat in Ruimtepak](angry-cats-from-space/acfs3-ruimtepak/) | Kat in ruimtepak | 8 | <img src="angry-cats-from-space/acfs3-ruimtepak/fotos/acfs3-ruimtepak_artwork.png" width="80"> |
 | [ACFS4 — Kat op de Maan](angry-cats-from-space/acfs4-maan/) | Kat op de maan | 12 | <img src="angry-cats-from-space/acfs4-maan/fotos/acfs4-maan_artwork.png" width="80"> |
-| [ACFS5 — Kat bij Saturnus](angry-cats-from-space/acfs5-saturnus/) | Kat bij de planeet Saturnus | 12 | <img src="angry-cats-from-space/acfs5-saturnus/fotos/acfs5-saturnus_artwork.png" width="80"> |
+| [ACFS5 — Kat op Saturnus](angry-cats-from-space/acfs5-saturnus/) | Kat op de planeet Saturnus | 12 | <img src="angry-cats-from-space/acfs5-saturnus/fotos/acfs5-saturnus_artwork.png" width="80"> |
 
 Meer info over de hele serie: [Angry Cats From Space](angry-cats-from-space/)
 
