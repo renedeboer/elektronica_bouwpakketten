@@ -14,7 +14,7 @@ De printplaten en complete bouwpakketten zijn te bestellen via de webshop op **[
 
 ### Angry Cats From Space — ATtiny85 LED bouwpakketten
 
-Vijf verschillende PCB's met een kat in de ruimte als thema. Allen aangestuurd door een ATtiny85 microcontroller via charlieplexing, gevoed door een CR2032 knoopcelbatterij.
+Vijf verschillende PCB's met een kat in de ruimte als thema. Allen aangestuurd door een ATtiny85 microcontroller via charlieplexing, gevoed door twee AA of AAA batterijen.
 
 | Kit | Thema | LEDs |
 |-----|-------|------|
