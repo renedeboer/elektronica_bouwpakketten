@@ -2,7 +2,7 @@
 
 # ACFS2 — Kat in een Raket
 
-Een kat die in een raket vliegt, met 20 animerende LEDs aangestuurd door een ATtiny85.
+Een kat die in een raket zit, met 20 animerende LEDs aangestuurd door een ATtiny85.
 
 | | |
 |---|---|
