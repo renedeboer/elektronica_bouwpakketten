@@ -1,3 +1,5 @@
+<img src="../../images/logo.svg" align="right" width="72">
+
 # Politielicht
 
 Een afwisselend rood/blauw zwaailicht effect met 6 LED's, twee transistoren en een 4017 counter.

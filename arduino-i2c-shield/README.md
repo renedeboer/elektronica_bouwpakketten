@@ -1,3 +1,5 @@
+<img src="../images/logo.svg" align="right" width="72">
+
 # Long Distance I2C Bus Extender
 
 Een tweedelig systeem voor het aansturen van I2C apparaten over langere kabelafstanden, met een Arduino Uno shield en een uitgebreid remote I/O board.

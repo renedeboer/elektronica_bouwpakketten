@@ -1,3 +1,5 @@
+<img src="../../images/logo.svg" align="right" width="72">
+
 # Knight Rider
 
 Vijf LED's die heen en weer lopen, geïnspireerd door de iconische verlichting van KITT uit Knight Rider.

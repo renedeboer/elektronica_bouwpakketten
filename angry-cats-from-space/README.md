@@ -1,3 +1,5 @@
+<img src="../images/logo.svg" align="right" width="72">
+
 # Angry Cats From Space
 
 Een reeks van vijf decoratieve LED-bouwpakketten met katten in de ruimte als thema. Elk bouwpakket is een andere kat in een andere ruimtesituatie.

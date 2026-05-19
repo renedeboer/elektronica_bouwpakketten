@@ -1,3 +1,5 @@
+<img src="../../images/logo.svg" align="right" width="72">
+
 # Elektronische Dobbelsteen
 
 Een elektronische dobbelsteen met 7 LED's in dobbelsteenpatroon, aangestuurd door een LM555 en CD4017. Schud de dobbelsteen, stop en de uitkomst verschijnt.

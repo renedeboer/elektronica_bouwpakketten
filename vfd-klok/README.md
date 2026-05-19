@@ -1,3 +1,5 @@
+<img src="../images/logo.svg" align="right" width="72">
+
 # VFD Klok
 
 Een klok met een vacuüm fluorescentie display (VFD), aangestuurd door een Arduino Nano met RTC module en temperatuur-/drukmeting.

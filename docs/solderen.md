@@ -1,3 +1,5 @@
+<img src="../images/logo.svg" align="right" width="72">
+
 # Soldeertips en techniek
 
 Een korte handleiding voor het solderen van de bouwpakketten.

@@ -1,3 +1,5 @@
+<img src="../images/logo.svg" align="right" width="72">
+
 # ZX Spectrum I2C Interface
 
 Een uitbreidingskaart voor de **ZX Spectrum 48K** die I2C communicatie mogelijk maakt via de edge connector. Inclusief Kempston-compatibele joystick interface en ZX BASIC softwarebibliotheek.

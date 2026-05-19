@@ -1,3 +1,5 @@
+<img src="../images/logo.svg" align="right" width="72">
+
 # 555-timer en 4017 Bouwpakketten
 
 Vier klassieke LED-bouwpakketten op basis van de **NE555/LM555 timer IC** en de **CD4017 decade counter**. Puur analoge en digitale elektronica — geen microcontroller, geen software, geen programmering nodig.

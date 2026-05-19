@@ -1,3 +1,5 @@
+<img src="../../images/logo.svg" align="right" width="72">
+
 # ACFS3 — Kat in Ruimtepak
 
 Een kat in een ruimtepak, met animerende LEDs aangestuurd door een ATtiny85.

@@ -1,3 +1,5 @@
+<img src="../../images/logo.svg" align="right" width="72">
+
 # LED Fading
 
 Een LED die langzaam en vloeiend aan en uit ademhaalt, alsof hij leeft.

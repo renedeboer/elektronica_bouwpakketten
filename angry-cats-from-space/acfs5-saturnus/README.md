@@ -1,3 +1,5 @@
+<img src="../../images/logo.svg" align="right" width="72">
+
 # ACFS5 — Kat bij Saturnus
 
 Een kat naast de planeet Saturnus, met animerende LEDs aangestuurd door een ATtiny85.

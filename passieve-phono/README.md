@@ -1,3 +1,5 @@
+<img src="../images/logo.svg" align="right" width="72">
+
 # Phono Voorversterker met Passief RIAA Netwerk
 
 Een stereo phono voorversterker voor MM (Moving Magnet) platenspelers, met een **passief RIAA netwerk tussen twee op-amp trappen**.

@@ -1,3 +1,5 @@
+<img src="../../images/logo.svg" align="right" width="72">
+
 # ACFS1 — Kat in UFO
 
 Een kat in een vliegende schotel met animerende LEDs, aangestuurd door een ATtiny85.

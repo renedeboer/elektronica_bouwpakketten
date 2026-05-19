@@ -1,3 +1,5 @@
+<img src="../images/logo.svg" align="right" width="72">
+
 # Benodigde gereedschappen en materialen
 
 ## Gereedschap

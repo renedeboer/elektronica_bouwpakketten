@@ -1,6 +1,10 @@
+<img src="images/logo.svg" align="right" width="120">
+
 # Elektronica Bouwpakketten
 
 Een verzameling zelfbouw elektronica bouwpakketten, van eenvoudige 555-timer schakelingen tot een VFD klok met Arduino. Alle bouwpakketten zijn ontworpen in KiCad.
+
+![Werkbank](images/werkbank.jpg)
 
 ## Bestellen
 
