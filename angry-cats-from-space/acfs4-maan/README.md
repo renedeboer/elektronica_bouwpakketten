@@ -4,9 +4,10 @@
 
 Een kat die op de maan zit, met animerende LEDs aangestuurd door een ATtiny85.
 
-![acfs4-maan artwork](fotos/acfs4-maan_artwork.png)
-
-![acfs4-maan PCB](fotos/acfs4-maan_pcb_leeg.jpg)
+| | |
+|---|---|
+| ![Artwork](fotos/acfs4-maan_artwork.png) | ![Lege PCB](fotos/acfs4-maan_pcb_leeg.jpg) |
+| *Artwork* | *Lege PCB* |
 
 
 ## Beschrijving

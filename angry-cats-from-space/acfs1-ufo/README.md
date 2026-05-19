@@ -4,9 +4,10 @@
 
 Een kat in een vliegende schotel met 12 animerende LEDs, aangestuurd door een ATtiny85.
 
-![acfs1-ufo artwork](fotos/acfs1-ufo_artwork.png)
-
-![acfs1-ufo PCB](fotos/acfs1-ufo_pcb_leeg.jpg)
+| | |
+|---|---|
+| ![Artwork](fotos/acfs1-ufo_artwork.png) | ![Lege PCB](fotos/acfs1-ufo_pcb_leeg.jpg) |
+| *Artwork* | *Lege PCB* |
 
 
 ## Beschrijving
