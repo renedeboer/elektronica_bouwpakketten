@@ -32,13 +32,13 @@ De schuifschakelaar is de aan/uit schakelaar.
 | U1 | LM555N (DIP-8) | 1 |
 | U2 | CD4017 decade counter (DIP-16) | 1 |
 | Q1–Q6 | BC557 PNP / BRN2222A NPN transistoren | 6 |
-| C1 | 10µF / 10V elektrolytisch | 1 |
-| C2 | 100nF | 1 |
-| R1–R5 | 10kΩ | 5 |
-| R6 | 3,3MΩ | 1 |
-| R7 | 4,7MΩ | 1 |
-| R8 | 10MΩ | 1 |
-| R9–R21 | 1kΩ | 13 |
+| C1 | 100nF | 1 |
+| C2 | 10µF / 10V elektrolytisch | 1 |
+| R1, R2, R6 | 1kΩ | 3 |
+| R3 | 10MΩ | 1 |
+| R4, R5 | 4,7MΩ | 2 |
+| R7–R14 | 10kΩ | 8 |
+| R15–R21 | 270Ω | 7 |
 | D1–D7 | LED (kleur naar keuze) | 7 |
 | SW1 | Balschakelaar (normally closed) | 1 |
 | SW2 | Schuifschakelaar DPDT | 1 |
@@ -66,7 +66,7 @@ Zie de [seriepagina](../README.md) voor de algemene volgorde van montage.
 
 - Let bij de transistoren goed op het type: de BC557 is een **PNP** type, de BRN2222A is een **NPN** type. Ze zijn allebei aanwezig in dit circuit en hebben een verschillende werking — verwisselen geeft een niet-werkende schakeling.
 - **SW1** is een **balschakelaar** (normally closed) — de bal maakt normaal contact; bij schudden verliest hij dit even. Zorg dat de balschakelaar vrij kan bewegen in de behuizing.
-- **C1 (10µF)** is elektrolytisch — let op polariteit.
+- **C2 (10µF)** is elektrolytisch — let op polariteit.
 
 ## KiCad bestanden
 
