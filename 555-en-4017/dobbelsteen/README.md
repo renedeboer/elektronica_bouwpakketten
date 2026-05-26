@@ -31,7 +31,8 @@ De schuifschakelaar is de aan/uit schakelaar.
 |------------|--------|--------|
 | U1 | LM555N (DIP-8) | 1 |
 | U2 | CD4017 decade counter (DIP-16) | 1 |
-| Q1–Q6 | BC557 PNP / BRN2222A NPN transistoren | 6 |
+| Q2, Q6 | BC557 PNP transistor | 2 |
+| Q1, Q3, Q4, Q5 | BRN2222A NPN transistor | 4 |
 | C1 | 100nF | 1 |
 | C2 | 10µF / 10V elektrolytisch | 1 |
 | R1, R2, R6 | 1kΩ | 3 |
