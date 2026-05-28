@@ -32,13 +32,13 @@ De ATtiny85 wordt geprogrammeerd via ISP met een Arduino als programmer:
 
 ## De vijf bouwpakketten
 
-| Kit | Thema | LEDs |
-|-----|-------|------|
-| [ACFS1 — Kat in UFO](acfs1-ufo/) | Kat in een vliegende schotel | 14 |
-| [ACFS2 — Kat in een Raket](acfs2-raket/) | Kat in een raket | 20 |
-| [ACFS3 — Kat in Ruimtepak](acfs3-ruimtepak/) | Kat in ruimtepak | 8 |
-| [ACFS4 — Kat op de Maan](acfs4-maan/) | Kat op de maan | 12 |
-| [ACFS5 — Kat op Saturnus](acfs5-saturnus/) | Kat op de planeet Saturnus | 12 |
+| Kit | Thema | LEDs | iBOM |
+|-----|-------|------|------|
+| [ACFS1 — Kat in UFO](acfs1-ufo/) | Kat in een vliegende schotel | 14 | [iBOM](https://htmlpreview.github.io/?https://github.com/renedeboer/elektronica_bouwpakketten/blob/main/angry-cats-from-space/acfs1-ufo/bom/ibom.html) |
+| [ACFS2 — Kat in een Raket](acfs2-raket/) | Kat in een raket | 20 | [iBOM](https://htmlpreview.github.io/?https://github.com/renedeboer/elektronica_bouwpakketten/blob/main/angry-cats-from-space/acfs2-raket/bom/ibom.html) |
+| [ACFS3 — Kat in Ruimtepak](acfs3-ruimtepak/) | Kat in ruimtepak | 8 | [iBOM](https://htmlpreview.github.io/?https://github.com/renedeboer/elektronica_bouwpakketten/blob/main/angry-cats-from-space/acfs3-ruimtepak/bom/ibom.html) |
+| [ACFS4 — Kat op de Maan](acfs4-maan/) | Kat op de maan | 12 | [iBOM](https://htmlpreview.github.io/?https://github.com/renedeboer/elektronica_bouwpakketten/blob/main/angry-cats-from-space/acfs4-maan/bom/ibom.html) |
+| [ACFS5 — Kat op Saturnus](acfs5-saturnus/) | Kat op de planeet Saturnus | 12 | [iBOM](https://htmlpreview.github.io/?https://github.com/renedeboer/elektronica_bouwpakketten/blob/main/angry-cats-from-space/acfs5-saturnus/bom/ibom.html) |
 
 ## Stuklijst
 
