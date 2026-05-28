@@ -35,6 +35,8 @@ Zie de [seriepagina](../README.md) voor de algemene volgorde van montage en de [
 
 ![angrycatsfromspace5 schema](schema/angrycatsfromspace5.svg)
 
+[Interactieve stuklijst (iBOM)](https://htmlpreview.github.io/?https://github.com/renedeboer/elektronica_bouwpakketten/blob/main/angry-cats-from-space/acfs5-saturnus/bom/ibom.html)
+
 KiCad projectbestanden: `~/Documents/KiCad/projects/angrycatsfromspace5/`
 
 ## Software

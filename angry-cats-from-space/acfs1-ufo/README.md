@@ -40,6 +40,8 @@ Zie de [seriepagina](../README.md) voor de algemene volgorde van montage en de [
 
 ![angrycatsfromspace1 schema](schema/angrycatsfromspace1.svg)
 
+[Interactieve stuklijst (iBOM)](https://htmlpreview.github.io/?https://github.com/renedeboer/elektronica_bouwpakketten/blob/main/angry-cats-from-space/acfs1-ufo/bom/ibom.html)
+
 De KiCad projectbestanden staan in de [KiCad projectenmap](../../) op het lokale systeem (`~/Documents/KiCad/projects/angrycatsfromspace1/`).
 
 De Gerber bestanden voor PCB productie zijn beschikbaar in de `production/` map van het KiCad project.
