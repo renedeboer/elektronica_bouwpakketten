@@ -37,6 +37,8 @@ Zie de [seriepagina](../README.md) voor de algemene volgorde van montage en de [
 
 ![angrycatsfromspace2 schema](schema/angrycatsfromspace2.svg)
 
+[Interactieve stuklijst (iBOM)](https://htmlpreview.github.io/?https://github.com/renedeboer/elektronica_bouwpakketten/blob/main/angry-cats-from-space/acfs2-raket/bom/ibom.html)
+
 KiCad projectbestanden: `~/Documents/KiCad/projects/angrycatsfromspace2/`
 
 ## Software
