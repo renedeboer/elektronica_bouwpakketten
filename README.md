@@ -34,12 +34,12 @@ Meer info over de hele serie: [Angry Cats From Space](angry-cats-from-space/)
 
 Vier bouwpakketten op basis van de klassieke NE555/LM555 timer IC en de CD4017 decade counter. Puur analoge/digitale elektronica, geen microcontroller of software.
 
-| Kit | Effect | |
-|-----|--------|-|
-| [LED Fading](555-en-4017/fading/) | LED die langzaam aan en uit ademhaalt | <img src="555-en-4017/fading/fotos/fading.gif" width="120"> |
-| [Knight Rider](555-en-4017/knightrider/) | 5 LEDs die heen en weer lopen | <img src="555-en-4017/knightrider/fotos/knightrider.gif" width="120"> |
-| [Politielicht](555-en-4017/politielicht/) | Rood/blauw zwaailicht effect | <img src="555-en-4017/politielicht/fotos/politielicht.gif" width="120"> |
-| [Elektronische Dobbelsteen](555-en-4017/dobbelsteen/) | Dobbelsteen met balschakelaar | <img src="555-en-4017/dobbelsteen/fotos/dobbelsteen.gif" width="80"> |
+| Kit | Effect | | |
+|-----|--------|-|-|
+| [LED Fading](555-en-4017/fading/) | LED die langzaam aan en uit ademhaalt | [PDF](555-en-4017/fading/schema/fadeled.pdf) | <img src="555-en-4017/fading/fotos/fading.gif" width="120"> |
+| [Knight Rider](555-en-4017/knightrider/) | 6 LEDs die heen en weer lopen | [PDF](555-en-4017/knightrider/schema/kitt.pdf) | <img src="555-en-4017/knightrider/fotos/knightrider.gif" width="120"> |
+| [Politielicht](555-en-4017/politielicht/) | Rood/blauw zwaailicht effect | [PDF](555-en-4017/politielicht/schema/police.pdf) | <img src="555-en-4017/politielicht/fotos/politielicht.gif" width="120"> |
+| [Elektronische Dobbelsteen](555-en-4017/dobbelsteen/) | Dobbelsteen met balschakelaar | [PDF](555-en-4017/dobbelsteen/schema/dice.pdf) | <img src="555-en-4017/dobbelsteen/fotos/dobbelsteen.gif" width="80"> |
 
 Meer info over de hele serie: [555-timer en 4017](555-en-4017/)
 
