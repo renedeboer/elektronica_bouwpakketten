@@ -15,11 +15,13 @@ Een afwisselend rood/blauw zwaailicht effect met 6 LED's, twee transistoren en e
 
 ## Beschrijving
 
-De NE555 genereert pulsen voor de CD4017 decade counter. De 4017 verdeelt de LED's over twee groepen (rood en blauw) via twee BC547 transistoren. Het resultaat is een overtuigend politie-zwaailicht effect.
+De NE555 genereert pulsen voor de CD4017 decade counter. De 4017 verdeelt de LED's over twee groepen (rood en blauw) via twee NPN transistoren. Het resultaat is een overtuigend politie-zwaailicht effect.
 
 ## Schema
 
 ![555 Politielicht schema](schema/555police.svg)
+
+[Handleiding / inlay (PDF)](schema/police.pdf)
 
 [Interactieve stuklijst (iBOM)](https://htmlpreview.github.io/?https://github.com/renedeboer/elektronica_bouwpakketten/blob/main/555-en-4017/politielicht/bom/ibom.html)
 
@@ -27,15 +29,16 @@ De NE555 genereert pulsen voor de CD4017 decade counter. De 4017 verdeelt de LED
 
 | Aanduiding | Waarde | Aantal |
 |------------|--------|--------|
-| U1 | NE555P (DIP-8) | 1 |
-| U2 | CD4017 decade counter (DIP-16) | 1 |
-| Q1, Q2 | BC547 NPN transistor | 2 |
-| C1 | 100µF / 10V elektrolytisch | 1 |
+| U1 | NE555P (met ic-voet DIP-8) | 1 |
+| U2 | CD4017 decade counter (met ic-voet DIP-16) | 1 |
+| Q1, Q2 | NPN transistor | 2 |
+| C1 | 4,7µF / 10V elektrolytisch | 1 |
 | R1 | 1kΩ | 1 |
 | R2 | 22kΩ | 1 |
 | R3–R12 | 470Ω | 10 |
 | D1–D6 | 1N4148 signaaldiode | 6 |
-| D7–D12 | LED (kleur naar keuze) | 6 |
+| D7–D9 | LED (rood) | 3 |
+| D10–D12 | LED (blauw) | 3 |
 | BT1 | 9V batterijclip | 1 |
 
 ## Bouwinstructies

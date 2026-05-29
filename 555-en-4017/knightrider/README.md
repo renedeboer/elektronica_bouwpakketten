@@ -2,7 +2,7 @@
 
 # Knight Rider
 
-Vijf LED's die heen en weer lopen, geïnspireerd door de iconische verlichting van KITT uit Knight Rider.
+Zes LED's die heen en weer lopen, geïnspireerd door de iconische verlichting van KITT uit Knight Rider.
 
 | | |
 |---|---|
@@ -15,13 +15,15 @@ Vijf LED's die heen en weer lopen, geïnspireerd door de iconische verlichting v
 
 ## Beschrijving
 
-De NE555 genereert pulsen die de CD4017 decade counter aansturen. De 4017 telt van Q0 tot Q4 en terug, waardoor de vijf LED's om beurten oplichten en het "lopende licht" effect ontstaat.
+De NE555 genereert automatisch een reeks klokpulsen via R1, R2 en C1, die de CD4017 decade teller aansturen. De 4017 heeft 10 uitgangen (Q0–Q9) waarvan er telkens één hoog is, en schuift bij elke puls één stap verder — zo worden de 6 leds (D1–D6) één voor één aangestuurd via een 1kΩ weerstand.
 
-De terugloop wordt gerealiseerd door de uitgang Q5 terug te koppelen naar de reset-pin van de 4017.
+De truc zit in de bedrading vanaf stap 5: Q5 en Q6 zijn niet op nieuwe leds aangesloten, maar gespiegeld terug op D6, D5, D4... zodat het lichtje automatisch terugloopt naar D1. Na Q9 reset de teller en begint alles opnieuw — een eeuwig heen-en-weer effect, zonder microcontrollers.
 
 ## Schema
 
 ![555 Knight Rider schema](schema/555knightrider.svg)
+
+[Handleiding / inlay (PDF)](schema/kitt.pdf)
 
 [Interactieve stuklijst (iBOM)](https://htmlpreview.github.io/?https://github.com/renedeboer/elektronica_bouwpakketten/blob/main/555-en-4017/knightrider/bom/ibom.html)
 
@@ -29,15 +31,14 @@ De terugloop wordt gerealiseerd door de uitgang Q5 terug te koppelen naar de res
 
 | Aanduiding | Waarde | Aantal |
 |------------|--------|--------|
-| U1 | NE555P (DIP-8) | 1 |
-| U2 | CD4017 decade counter (DIP-16) | 1 |
+| U1 | NE555P (met ic-voet DIP-8) | 1 |
+| U2 | CD4017 decade counter (met ic-voet DIP-16) | 1 |
 | C1 | 3,3µF / 10V elektrolytisch | 1 |
-| R1 | 68kΩ | 1 |
-| R2–R6 | 1kΩ | 5 |
-| D1–D5 | LED (kleur naar keuze) | 5 |
+| R1 | 1kΩ | 1 |
+| R2 | 68kΩ | 1 |
+| R3–R12 | 1kΩ | 10 |
+| D1–D6 | LED (rood helder) | 6 |
 | BT1 | 9V batterijclip | 1 |
-
-> De weerstanden R7–R12 op de PCB zijn voor de terugkoppeling en stroombeperking; zie het schema voor de exacte waarden.
 
 ## Bouwinstructies
 
@@ -46,7 +47,7 @@ Zie de [seriepagina](../README.md) voor de algemene volgorde van montage.
 ### Specifieke aandachtspunten
 
 - **U2 (CD4017)** is een 16-pins IC — zorg dat pin 1 (markering op het IC) overeenkomt met de markering op de socket.
-- Alle 5 LED's op gelijke hoogte solderen geeft het mooiste effect.
+- Alle 6 LED's op gelijke hoogte solderen geeft het mooiste effect.
 - De snelheid pas je aan via R1 of C1: groter = langzamer.
 
 ## KiCad bestanden

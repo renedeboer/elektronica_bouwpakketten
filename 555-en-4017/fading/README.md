@@ -15,7 +15,7 @@ Een LED die langzaam en vloeiend aan en uit ademhaalt, alsof hij leeft.
 
 ## Beschrijving
 
-De NE555 genereert een laagfrequent blokgolfsignaal. Een transistor (BC547) en een elektrolytische condensator zorgen samen voor de langzame op- en afbouw van de spanning door de LED — het zogenaamde "ademhaling" effect.
+De NE555 genereert een laagfrequent blokgolfsignaal. Een NPN transistor en een elektrolytische condensator zorgen samen voor de langzame op- en afbouw van de spanning door de LED — het zogenaamde "ademhaling" effect.
 
 **Geen 4017 in dit circuit** — puur 555 met een transistor als stuurcomponent.
 
@@ -23,14 +23,16 @@ De NE555 genereert een laagfrequent blokgolfsignaal. Een transistor (BC547) en e
 
 ![555 Fading schema](schema/555.svg)
 
+[Handleiding / inlay (PDF)](schema/fadeled.pdf)
+
 [Interactieve stuklijst (iBOM)](https://htmlpreview.github.io/?https://github.com/renedeboer/elektronica_bouwpakketten/blob/main/555-en-4017/fading/bom/ibom.html)
 
 ## Stuklijst
 
 | Aanduiding | Waarde | Aantal |
 |------------|--------|--------|
-| U1 | NE555P (DIP-8) | 1 |
-| Q1 | BC547 NPN transistor | 1 |
+| U1 | NE555P (inclusief IC voetje DIP-8) | 1 |
+| Q1 | NPN transistor | 1 |
 | C1 | 100µF / 10V elektrolytisch | 1 |
 | R1 | 15kΩ | 1 |
 | R2 | 470Ω | 1 |
